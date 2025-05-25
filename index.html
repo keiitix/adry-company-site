@@ -1,33 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>株式会社Adry - 公式サイト</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 2rem 1rem;
-    }
-    main {
-      padding: 2rem 1rem;
-    }
-    footer {
-      background-color: #eee;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社Adry</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header>
@@ -36,22 +14,22 @@
   </header>
 
   <main>
-    <h2>ごあいさつ</h2>
-    <p>株式会社Adryは、革新的なソリューションでビジネスと社会を変革する会社です。</p>
-
-    <h2>事業内容</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>・iOSアプリ開発</li>
-      <li>・AI開発</li>
-      <li>・Webアプリ開発</li>
-    </ul>
-
-    <h2>お問い合わせ</h2>
-    <p>メール: info@example.com</p>
+    <section>
+      <h2>お問い合わせ</h2>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfdummyformID/viewform?embedded=true" method="post" target="_blank">
+        <label for="name">お名前:</label><br>
+        <input type="text" id="name" name="entry.1234567890"><br><br>
+        <label for="email">メールアドレス:</label><br>
+        <input type="email" id="email" name="entry.0987654321"><br><br>
+        <label for="message">メッセージ:</label><br>
+        <textarea id="message" name="entry.1112131415" rows="4"></textarea><br><br>
+        <input type="submit" value="送信">
+      </form>
+    </section>
   </main>
 
   <footer>
-    &copy; 2025 株式会社Adry. All rights reserved.
+    <p>&copy; 2025 株式会社Adry. All rights reserved.</p>
   </footer>
 </body>
 </html>
