@@ -1,37 +1,201 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adry株式会社</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #dee2e6;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin-right: 1.5rem;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+    }
+    .hero {
+      background-color: #e9ecef;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #fff;
+      border-top: 1px solid #dee2e6;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Adry株式会社</h1>
-    <p>キャッチコピー</p>
+    <nav>
+      <a href="#about">会社概要</a>
+      <a href="#message">代表メッセージ</a>
+      <a href="#mission">ミッション・ビジョン</a>
+      <a href="#services">事業紹介</a>
+      <a href="#team">チーム紹介</a>
+      <a href="#news">ニュース</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#media">メディア掲載</a>
+      <a href="#partners">パートナー</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>お問い合わせ</h2>
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfdummyformID/viewform?embedded=true" method="post" target="_blank">
-        <label for="name">お名前:</label><br>
-        <input type="text" id="name" name="entry.1234567890"><br><br>
-        <label for="email">メールアドレス:</label><br>
-        <input type="email" id="email" name="entry.0987654321"><br><br>
-        <label for="message">メッセージ:</label><br>
-        <textarea id="message" name="entry.1112131415" rows="4"></textarea><br><br>
-        <input type="submit" value="送信">
-      </form>
-    </section>
-  </main>
+  <section class="hero">
+    <h2>感情をつなぐ、テクノロジー。</h2>
+    <p>私たちは心の動きと技術を融合し、新しい社会の在り方を提案します。</p>
+  </section>
+
+  <section class="section" id="about">
+    <h3>会社概要</h3>
+    <div class="card">
+      <p><strong>社名：</strong> Adry株式会社</p>
+      <p><strong>設立：</strong> 2023年</p>
+      <p><strong>所在地：</strong> 東京都渋谷区○○○</p>
+      <p><strong>代表：</strong> 伊東 啓一朗</p>
+    </div>
+  </section>
+
+  <section class="section" id="message">
+    <h3>代表メッセージ</h3>
+    <div class="card">
+      <p>テクノロジーの力で人の感情を可視化し、より良い社会を創造する――。その想いを胸に、私たちは一歩ずつ進みます。</p>
+    </div>
+  </section>
+
+  <section class="section" id="mission">
+    <h3>ミッション・ビジョン</h3>
+    <div class="card">
+      <p><strong>ミッション：</strong> 感情を軸にしたテクノロジーで人々の可能性を広げる</p>
+      <p><strong>ビジョン：</strong> 一人ひとりが自己実現できる社会を構築する</p>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <h3>事業紹介</h3>
+    <div class="card">
+      <p>・iOSアプリ開発</p>
+      <p>・AIを活用したプロダクト開発</p>
+      <p>・WebサービスのUI/UXデザイン</p>
+    </div>
+  </section>
+
+  <section class="section" id="team">
+    <h3>チーム紹介</h3>
+    <div class="card">
+      <p>多様な専門性を持つメンバーが、感情と技術の交差点で挑戦を続けています。</p>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <h3>ニュース・プレスリリース</h3>
+    <div class="card">
+      <p>※ 現在準備中です。リリース情報を随時更新します。</p>
+    </div>
+  </section>
+
+  <section class="section" id="recruit">
+    <h3>採用情報</h3>
+    <div class="card">
+      <p>私たちと一緒に未来を創る仲間を募集しています。詳細は後日公開予定です。</p>
+    </div>
+  </section>
+
+  <section class="section" id="media">
+    <h3>メディア掲載実績</h3>
+    <div class="card">
+      <p>※ 準備中です。</p>
+    </div>
+  </section>
+
+  <section class="section" id="partners">
+    <h3>パートナー実績</h3>
+    <div class="card">
+      <p>※ 現在準備中です。</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>お問い合わせ</h3>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfdummyformID/viewform?embedded=true" method="post" target="_blank">
+      <input type="text" name="entry.1234567890" placeholder="お名前" required>
+      <input type="email" name="entry.0987654321" placeholder="メールアドレス" required>
+      <textarea name="entry.1112131415" rows="5" placeholder="お問い合わせ内容" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+    <p style="margin-top: 1rem;">メールでも受け付けています：<a href="mailto:info@adry.jp">info@adry.jp</a></p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Adry株式会社. All rights reserved.</p>
+    &copy; 2025 Adry株式会社. All rights reserved.
   </footer>
 </body>
 </html>
