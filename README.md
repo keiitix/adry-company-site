@@ -1,2 +1,2 @@
-# adry-company-site
+# Adryホームページ
 Official website for Adry
