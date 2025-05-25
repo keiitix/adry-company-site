@@ -196,7 +196,13 @@
 
   <section class="section" id="contact">
     <h3>お問い合わせ</h3>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdq-NFA3jIg3UaXrG92Dp5afffRu18r6QNfi2fygHrkcwrg0w/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    <form action="https://formsubmit.co/info@adry.jp" method="POST">
+      <input type="text" name="name" placeholder="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">送信</button>
+    </form>
     <p style="margin-top: 1rem;">メールでも受け付けています：<a href="mailto:info@adry.jp">info@adry.jp</a></p>
   </section>
 
