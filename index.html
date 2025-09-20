@@ -200,21 +200,23 @@ nav a[aria-current="page"]::after {
     // ------------------------------
     function navigateTo(key) {
       const content = document.getElementById('content');
-      const navBtns = document.querySelectorAll('nav button');
-      navBtns.forEach(btn => btn.removeAttribute('aria-current'));
-      document.getElementById(`nav-${key}`).setAttribute('aria-current','page');
+      document.querySelectorAll('nav button, nav a')
+      .forEach(el => el.removeAttribute('aria-current'));
 
-      // フェード効果
-      content.classList.add('fade-enter');
-      setTimeout(()=>{
-        content.innerHTML = pages[key] || pages.home;
-        content.classList.remove('fade-enter');
-        content.classList.add('fade-enter-active');
-        setTimeout(()=>content.classList.remove('fade-enter-active'),400);
-      },150);
+  // ★ クリックされたSPA用ボタンにだけ付け直す
+      const active = document.getElementById(`nav-${key}`);
+      if (active) active.setAttribute('aria-current', 'page');
 
-      console.log(`📄 ページ遷移 → ${key}`);
-    }
+  // フェード効果＋描画
+  content.classList.add('fade-enter');
+  setTimeout(()=>{
+    content.innerHTML = pages[key] || pages.home;
+    content.classList.remove('fade-enter');
+    content.classList.add('fade-enter-active');
+    setTimeout(()=>content.classList.remove('fade-enter-active'),400);
+  },150);
+}
+
 
     // ------------------------------
     // 📧 フォーム送信 (ダミー)
