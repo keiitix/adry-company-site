@@ -131,11 +131,11 @@ nav a[aria-current="page"]::after {
   <header>
     <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px; vertical-align:middle; margin-right:1rem;">
     <nav>
-    <a href="/">ホーム</a>
-    <a href="/terms/">利用規約</a>
-    <button id="nav-guidelines" onclick="navigateTo('guidelines')">ガイドライン</button>
-    <a href="/privacy/">プライバシーポリシー</a>
-    <button id="nav-privacy"    onclick="navigateTo('privacy')">データ・AI</button>
+      <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
+      <a href="/terms/">利用規約</a>
+      <a href="/guidelines/">ガイドライン</a>
+      <a href="/privacy/" aria-current="page">プライバシーポリシー</a> <!-- ★これ -->
+      <a href="/data-ai/">データ・AI</a>
     </nav>
   </header>
 
