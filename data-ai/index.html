@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>データ・AI | Adry株式会社</title>
+  <!-- Web Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon / OGP -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
+  <meta property="og:image" content="ogp.png">
+  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ------------- CSS ------------- -->
+  <style>
+    /* ------------------------------
+       変数・リセット
+    ------------------------------ */
+    :root {
+      --primary: #4847B4;          /* ブランドカラー */
+      --dark:   #1e1e2f;
+      --light:  #ffffff;
+      --grey:   #f4f6fa;
+      --radius: 0.75rem;
+      --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+      background: var(--grey);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    ul { list-style: inside; margin-left: 1rem; }
+
+    /* ------------------------------
+       レイアウト
+    ------------------------------ */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background: var(--light);
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+  nav button,
+nav a {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: var(--dark);
+  margin-left: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+nav a:hover,
+nav button[aria-current="page"],
+nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+nav button[aria-current="page"]::after,
+nav a[aria-current="page"]::after {
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
+}
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
+      color: var(--light);
+      text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 1s ease-out;
+    }
+    .hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .hero p  { font-size: 1.1rem; }
+
+    /* セクション共通 */
+    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+    .card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.25rem;
+      animation: fadeIn .5s ease-out;
+    }
+
+    /* フォーム */
+    form { display: grid; gap: 1rem; }
+    label { font-weight: 600; }
+    input, textarea {
+      padding: 0.75rem; border: 1px solid #ccd0dd; border-radius: var(--radius);
+      font-size: 1rem; width: 100%;
+    }
+    input[type="submit"] {
+      background: var(--primary); color: var(--light); border: none;
+      cursor: pointer; font-weight: 600; transition: background .3s;
+    }
+    input[type="submit"]:hover { background: #3a3994; }
+
+    footer { text-align: center; padding: 2rem 1rem; color:#666; font-size: .85rem; }
+
+    /* フェードアニメ */
+    .fade-enter { opacity: 0; transform: translateY(10px); }
+    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+
+
+<body>
+  <!-- Header（ロゴはルート相対パスに） -->
+  <header>
+    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px; vertical-align:middle; margin-right:1rem;">
+    <nav>
+      <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
+      <a href="/terms/">利用規約</a>
+      <a href="/guidelines/">ガイドライン</a>
+      <a href="/privacy/">プライバシーポリシー</a> <!-- ★これ -->
+      <a href="/data-ai/" aria-current="page">データ・AI</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>データ・AI</h1>
+    </section>
+
+    <article class="card policy">
+        <section class="section"> <h2>データの取り扱いとAIポリシー</h2> <div class="card"> <h3>1. エコーチェンバーやバブルフィルターの回避</h3> <p>Adryはエコーチェンバーやバブルフィルターの形成を目的としてAIを使用していません。これらの現象は、同質的な意見や価値観が過度に強化されることで、多様性や異なる視点が失われるリスクをもたらします。Adryが目指しているのは、ユーザーが自分自身の視点を広げ、新しい発見や意識的な選択を促すような環境を提供することです。そのために、AIは文章に対する感情分析を行うだけであり、特定の意見や偏りを助長するアルゴリズム設計は行っていません。</p> <h3>2. 感情分析と文脈解析</h3> <p>AdryのAIは、ユーザーが投稿した文章や他者のコメントに対して感情分析を行います。これは、ポジティブ、ネガティブ、中立といった感情の傾向を判断し、ユーザーが文章のトーンや意図をより深く理解できるようにするためです。また、AIはユーザーが好む文章の文脈を解析し、適切なコンテンツやコメントとのマッチングをサポートします。これにより、単なる情報提供ではなく、ユーザーの体験を豊かにするための支援を目指しています。</p> <h3>3. オフライン重視の設計思想</h3> <p>Adryはオフラインでのつながりや生活の充実を最優先とする設計思想に基づいています。私たちが目指すのは、アプリケーション内での活動時間を増やすことではなく、ユーザーが現実世界でより豊かな体験を得られるようにすることです。そのため、アプリは過剰な通知やエンゲージメントを促す仕組みを避け、自然な利用をサポートするデザインを採用しています。</p> <h3>4. トラッキング情報の非取得</h3> <p>Adryでは、ユーザーのトラッキング情報の取得を一切行っていません。ユーザーがどのコンテンツを閲覧したか、どれくらいの時間アプリに滞在したかといったデータは記録されません。これは、ユーザーのプライバシーを最優先に考えた結果であり、利用者が安心してサービスを利用できる環境を提供するための基本方針です。</p> <h3>5. 商業利用への対策</h3> <p>Adryは、ユーザーの動向を商業的に利用することを目的としていません。多くのアプリケーションでは、収集したデータを広告やマーケティングに活用することが一般的ですが、私たちはそのアプローチを取りません。Adryはあくまでユーザーが自身の生活を豊かにするためのツールであり、収益化のためにユーザー体験を犠牲にすることはありません。</p> <h3>6. 中立的なコンテンツ提供</h3> <p>AIによるコンテンツマッチングは、中立性を重視しています。特定のイデオロギーや商業的な目的に基づくバイアスのかかった情報を提供せず、ユーザーが必要とする正確で役立つ情報のみを届けます。</p> <h3>7. AIの役割と限界</h3> <p>AdryのAIは万能ではありません。感情分析や文脈理解をサポートするものの、ユーザー自身の判断を代替するものではなく、補助的なツールとして設計されています。最終的な決定権は常にユーザーにあります。</p> <h3>8. 人間らしさとテクノロジーの融合</h3> <p>Adryの設計思想には、「人間らしさ」を尊重するアプローチが含まれています。AIが生成するコンテンツやマッチングアルゴリズムは、ユーザーの個性や嗜好を引き立てることを目的とし、人間中心のテクノロジーの活用を実現します。</p> <h3>9. 過剰な依存を避ける設計</h3> <p>Adryは、ユーザーがアプリに過剰に依存することを避けるよう設計されています。アプリ内での滞在時間を不必要に引き延ばす機能や仕組みを排除し、ユーザーが自分の時間をコントロールできる環境を提供します。</p> <h3>10. 未来を見据えたAIのビジョン</h3> <p>AdryのAIは、テクノロジーの進化とともに、ユーザーの生活を豊かにするための役割を担うことを目指しています。短期的な利益や流行に左右されるのではなく、持続可能で信頼性の高い体験を提供し続けることをミッションとしています。</p> </div> </section>
+    </article>
+  </main>
+
+   <footer>
+    © 2025 Adry株式会社. All rights reserved. |
+    <a href="/privacy/">プライバシーポリシー</a>|
+    <a href="/terms/">利用規約</a>
+  </footer>
+</body>
+</html>

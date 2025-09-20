@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ガイドライン | Adry株式会社</title>
+  <!-- Web Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon / OGP -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
+  <meta property="og:image" content="ogp.png">
+  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ------------- CSS ------------- -->
+  <style>
+    /* ------------------------------
+       変数・リセット
+    ------------------------------ */
+    :root {
+      --primary: #4847B4;          /* ブランドカラー */
+      --dark:   #1e1e2f;
+      --light:  #ffffff;
+      --grey:   #f4f6fa;
+      --radius: 0.75rem;
+      --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+      background: var(--grey);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    ul { list-style: inside; margin-left: 1rem; }
+
+    /* ------------------------------
+       レイアウト
+    ------------------------------ */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background: var(--light);
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+  nav button,
+nav a {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: var(--dark);
+  margin-left: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+nav a:hover,
+nav button[aria-current="page"],
+nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+nav button[aria-current="page"]::after,
+nav a[aria-current="page"]::after {
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
+}
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
+      color: var(--light);
+      text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 1s ease-out;
+    }
+    .hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .hero p  { font-size: 1.1rem; }
+
+    /* セクション共通 */
+    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+    .card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.25rem;
+      animation: fadeIn .5s ease-out;
+    }
+
+    /* フォーム */
+    form { display: grid; gap: 1rem; }
+    label { font-weight: 600; }
+    input, textarea {
+      padding: 0.75rem; border: 1px solid #ccd0dd; border-radius: var(--radius);
+      font-size: 1rem; width: 100%;
+    }
+    input[type="submit"] {
+      background: var(--primary); color: var(--light); border: none;
+      cursor: pointer; font-weight: 600; transition: background .3s;
+    }
+    input[type="submit"]:hover { background: #3a3994; }
+
+    footer { text-align: center; padding: 2rem 1rem; color:#666; font-size: .85rem; }
+
+    /* フェードアニメ */
+    .fade-enter { opacity: 0; transform: translateY(10px); }
+    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+
+
+<body>
+  <!-- Header（ロゴはルート相対パスに） -->
+  <header>
+    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px; vertical-align:middle; margin-right:1rem;">
+    <nav>
+      <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
+      <a href="/terms/">利用規約</a>
+      <a href="/guidelines/" aria-current="page">ガイドライン</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/data-ai/">データ・AI</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>ガイドライン</h1>
+    </section>
+
+    <article class="card policy">
+        <section class="section"> <h2>Adryコミュニティガイドライン</h2> <div class="card"> <p>Adryへようこそ。このプラットフォームは、ユーザー同士が安全で健全なコミュニケーションを通じて知識を深め、つながりを築く場として設計されています。私たちは、多様な背景を持つ人々が集まり、尊重し合いながら意見交換を行うことで、新たな発見や共感を得られることを目指しています。そのため、以下のガイドラインを設けました。これらを遵守し、より良いコミュニティを一緒に作り上げていきましょう。</p> <h3>1. 誹謗中傷を禁止します</h3> <p>Adryでは、他者を傷つける行為を一切容認しません。</p> <ul> <li><strong>個人攻撃の排除:</strong> 他者をターゲットにした侮辱、脅迫、または名誉毀損行為は禁止されています。</li> <li><strong>言葉の選択に注意:</strong> 暴言や攻撃的な言葉遣い、差別的な表現は禁止です。</li> <li><strong>報告体制:</strong> 不適切な発言や行動があった場合は、速やかに報告してください。</li> </ul> <h3>2. 差別とヘイトスピーチを許しません</h3> <ul> <li><strong>差別行為の禁止:</strong> 人種、性別、宗教、文化、性的指向、ジェンダー表現、国籍、障害などに基づく差別的行為は禁止です。</li> <li><strong>ヘイトスピーチへの厳格な対応:</strong> 特定の集団や個人を貶める発言は禁止です。</li> <li><strong>包摂的なコミュニケーション:</strong> 他者を尊重し、共感を持って接してください。</li> </ul> <h3>3. 健全な議論を促進します</h3> <ul> <li><strong>意見の多様性を奨励:</strong> 異なる視点や価値観を尊重しましょう。</li> <li><strong>批判的思考を育む:</strong> 感情ではなくエビデンスに基づいた発言を心がけましょう。</li> <li><strong>不適切な発言の防止:</strong> 批判する際は個人攻撃を避け、問題点に焦点を当ててください。</li> </ul> <h3>4. エコーチェンバーやバブルフィルターへの取り組み</h3> <ul> <li><strong>多様な情報源の推奨:</strong> 偏りのない視点を得られるよう支援します。</li> <li><strong>公平なアルゴリズム設計:</strong> コンテンツ推奨システムは多様性を重視します。</li> </ul> <h3>5. 著作権の遵守</h3> <ul> <li><strong>コンテンツの適切な利用:</strong> 他者のコンテンツを無断で使用しないでください。</li> <li><strong>違反行為への対応:</strong> 著作権侵害が確認された場合、削除や停止、法的措置が取られます。</li> </ul> <h3>6. プライバシーの保護とスキャンダルの拡散防止</h3> <ul> <li><strong>個人情報の保護:</strong> リーク情報や未承認の写真・動画の共有は禁止です。</li> <li><strong>公益性のないスキャンダルの排除:</strong> 社会的意義のないスキャンダルの拡散は禁止します。</li> <li><strong>違反行為の処罰:</strong> 厳しい措置と法的対応を講じます。</li> </ul> <h3>7. アダルトコンテンツの取り扱い</h3> <ul> <li><strong>許容される範囲:</strong> 創作活動としてのアダルトコンテンツは許容される場合がありますが、未成年対象やリベンジポルノは禁止です。</li> <li><strong>違反行為への対応:</strong> 違法行為が確認された場合は、アカウント削除・凍結・法的措置を行います。</li> <li><strong>違反行為の処罰:</strong> 発覚時には厳しい処分を行います。</li> </ul> <h3>8. 詐欺行為の禁止</h3> <ul> <li><strong>禁止行為の例:</strong> 金銭詐取、フィッシング詐欺、偽情報の拡散。</li> <li><strong>ユーザーの保護:</strong> 詐欺行為が疑われる場合は報告を推奨します。</li> </ul> <h3>9. 違反行為への対応</h3> <p>以下のような行為が確認された場合、厳正に対応します。</p> <ul> <li>アカウントの一時停止または削除</li> <li>コミュニティからの永久追放</li> <li>法的措置の検討</li> </ul> <p>AIおよびモデレーターによる監視体制を整備しています。</p> <h3>10. まとめ</h3> <p>Adryは、すべての人々が安心して利用できる場であることを約束します。そのためには、皆さん一人ひとりの協力が不可欠です。このガイドラインを遵守し、他者を尊重し合いながら、素晴らしいコミュニティを築いていきましょう。一緒に、安全で有意義な体験を創り上げましょう。</p> </div> </section>
+    </article>
+  </main>
+
+   <footer>
+    © 2025 Adry株式会社. All rights reserved. |
+    <a href="/privacy/">プライバシーポリシー</a>|
+    <a href="/terms/">利用規約</a>
+  </footer>
+</body>
+</html>
