@@ -43,3 +43,16 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background: #333;
 }
+
+nav a {
+  background: transparent; border: none; font: inherit;
+  color: var(--dark); margin-left: 1.25rem; cursor: pointer;
+  position: relative; padding-bottom: 4px; transition: color .3s;
+  text-decoration: none;
+}
+nav a:hover,
+nav a[aria-current="page"] { color: var(--primary); }
+nav a[aria-current="page"]::after {
+  content:""; position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
+}
