@@ -50,18 +50,33 @@
       box-shadow: var(--shadow);
     }
     header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
-    nav button {
-      background: transparent; border: none; font: inherit;
-      color: var(--dark); margin-left: 1.25rem; cursor: pointer;
-      position: relative; padding-bottom: 4px; transition: color .3s;
-    }
-    nav button:hover, nav button[aria-current="page"] {
-      color: var(--primary);
-    }
-    nav button[aria-current="page"]::after {
-      content:""; position:absolute; left:0; right:0; bottom:0;
-      height:2px; background: var(--primary);
-    }
+   nav button,
+nav a {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: var(--dark);
+  margin-left: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+nav a:hover,
+nav button[aria-current="page"],
+nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+nav button[aria-current="page"]::after,
+nav a[aria-current="page"]::after {
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
+}
 
     main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
 
