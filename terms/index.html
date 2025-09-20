@@ -10,3 +10,165 @@
     </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー | Adry株式会社</title>
+  <!-- Web Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon / OGP -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
+  <meta property="og:image" content="ogp.png">
+  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ------------- CSS ------------- -->
+  <style>
+    /* ------------------------------
+       変数・リセット
+    ------------------------------ */
+    :root {
+      --primary: #4847B4;          /* ブランドカラー */
+      --dark:   #1e1e2f;
+      --light:  #ffffff;
+      --grey:   #f4f6fa;
+      --radius: 0.75rem;
+      --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+      background: var(--grey);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    ul { list-style: inside; margin-left: 1rem; }
+
+    /* ------------------------------
+       レイアウト
+    ------------------------------ */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background: var(--light);
+      box-shadow: var(--shadow);
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+  nav button,
+nav a {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: var(--dark);
+  margin-left: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+nav a:hover,
+nav button[aria-current="page"],
+nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+nav button[aria-current="page"]::after,
+nav a[aria-current="page"]::after {
+  content:"";
+  position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
+}
+
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
+      color: var(--light);
+      text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 1s ease-out;
+    }
+    .hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .hero p  { font-size: 1.1rem; }
+
+    /* セクション共通 */
+    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+    .card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.25rem;
+      animation: fadeIn .5s ease-out;
+    }
+
+    /* フォーム */
+    form { display: grid; gap: 1rem; }
+    label { font-weight: 600; }
+    input, textarea {
+      padding: 0.75rem; border: 1px solid #ccd0dd; border-radius: var(--radius);
+      font-size: 1rem; width: 100%;
+    }
+    input[type="submit"] {
+      background: var(--primary); color: var(--light); border: none;
+      cursor: pointer; font-weight: 600; transition: background .3s;
+    }
+    input[type="submit"]:hover { background: #3a3994; }
+
+    footer { text-align: center; padding: 2rem 1rem; color:#666; font-size: .85rem; }
+
+    /* フェードアニメ */
+    .fade-enter { opacity: 0; transform: translateY(10px); }
+    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+
+
+<body>
+  <!-- Header（ロゴはルート相対パスに） -->
+  <header>
+    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px; vertical-align:middle; margin-right:1rem;">
+    <nav>
+      <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
+      <a href="/terms/" aria-current="page">利用規約</a>
+      <a href="/guidelines/">ガイドライン</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/data-ai/">データ・AI</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>利用規約</h1>
+      <!-- <p class="muted">最終改定日：2025年6月7日</p> -->
+    </section>
+
+    <article class="card policy">
+        <section class="section"> <h2>Adry利用規約</h2> <div class="card"> <h3>第1条 基本事項</h3> <p>1.本規約の適用範囲 Adry（以下「本サービス」）は、利用者が本規約に同意することを条件として提供されます。本規約は、すべての利用者に対して適用されます。</p> <p>2.規約の変更 本サービスは、事前の通知なく本規約を変更する権利を有します。変更後の規約は、本サービス上に掲示された時点で効力を発します。利用者は、規約変更後に本サービスを利用することで、その変更に同意したものとみなされます。</p> <h3>第2条 データの取り扱い</h3> <p>1.個人情報の保護 本サービスは、利用者の個人情報を適切に取り扱い、プライバシーポリシーに基づいて管理します。</p> <p>2.データ利用の同意 利用者は、本サービスの提供および改善のために、利用者の投稿や行動データが分析および活用されることに同意します。</p> <p>3.データ損失の免責 本サービスは、予期せぬ技術的問題や第三者による不正行為によるデータの損失について責任を負いません。</p> <h3>第3条 犯罪行為に関する対応</h3> <p>1.違法行為の禁止 利用者は、本サービスを利用して詐欺、名誉毀損、著作権侵害、ヘイトスピーチなど、法令に反する行為を行わないものとします。</p> <p>2.通報と協力 犯罪行為が疑われる場合、本サービスは法執行機関への通報および協力を行う権利を有します。</p> <p>3.法的手続き 必要に応じて、利用者の情報を法執行機関と共有する場合があります。</p> <h3>第4条 アカウント処分について</h3> <p>1.処分内容の非開示 アカウントの停止、削除、またはその他の制裁措置に関する詳細は、本サービスが利用者に開示しない場合があります。</p> <p>2.処分の最終決定権 アカウント処分に関する最終的な判断は本サービスが行い、利用者からの異議申し立てを受け付けない場合があります。</p> <h3>第5条 アカウントの管理義務</h3> <p>1.責任の所在 利用者は、自身のアカウントを安全に管理する責任を負います。アカウントの不正使用や第三者への譲渡による問題について、本サービスは一切の責任を負いません。</p> <p>2.パスワードの管理 利用者は、パスワードを適切に管理し、第三者に漏洩しないよう注意を払う義務があります。不正アクセスが確認された場合、速やかに本サービスに連絡するものとします。</p> <p>3.複数アカウントの禁止 同一人物による複数アカウントの作成や、複数アカウントを使用して本サービスの機能を悪用する行為は禁止されています。</p> <p>4.不正アクセスへの対処 利用者のアカウントが不正に使用された場合、本サービスは利用者の通知を受けた後、適切な対応を取る権利を有しますが、発生した損害に対して責任を負いません。</p> <p>5.休眠アカウントの取り扱い 一定期間使用されていないアカウントは、事前通知なく削除または停止される場合があります。</p> <h3>第6条 アカウントの売買禁止</h3> <p>1.原則禁止 利用者は、アカウントの売買、譲渡、または貸与を禁止されています。これに違反した場合、本サービスはアカウントを即時停止または削除する権利を有します。</p> <p>2.違反行為による責任 アカウント売買に伴う損害や問題について、本サービスは一切責任を負いません。</p> <h3>第7条 違法行為の禁止</h3> <p>1.具体例</p> <ul> <li>著作権や商標権の侵害</li> <li>金銭詐欺、フィッシング詐欺</li> <li>その他、法律に反する行為</li> </ul> <p>2.処罰 違法行為が確認された場合、本サービスはアカウントの即時停止や法的手続きを行います。</p> <h3>第8条 セキュリティの破壊や違法行為への対応</h3> <p>1.不正アクセスの禁止 セキュリティを破壊する行為や不正アクセスの試みは禁止されています。</p> <p>2.違反への対応 違法行為が確認された場合、警察や関連機関に速やかに通報します。</p> <p>3.協力要請 本サービスはセキュリティ向上のため、利用者に協力を求める場合があります。</p> <h3>第9条 利用規約の遵守</h3> <p>違反者への処置 違反者には、アカウント停止、削除、法的措置が取られる場合があります。</p> <h3>まとめ</h3> <p>Adryを快適で安全な環境に保つために、利用者一人ひとりの協力が欠かせません。本規約を守り、健全なコミュニティ運営にご協力ください。</p> </section>
+
+    </article>
+  </main>
+
+  <footer>
+    © 2025 Adry株式会社. All rights reserved. |
+    <a href="/privacy/">プライバシーポリシー</a>|
+    <a href="/terms/">利用規約</a>
+  </footer>
+</body>
+</html>
+
