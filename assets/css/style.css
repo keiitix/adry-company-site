@@ -1,150 +1,77 @@
-/* ================================
-   Adry Global CSS（共通スタイル）
-   ================================ */
-
-/* 変数・リセット */
 :root {
-  --primary: #4847B4;          /* ブランドカラー */
+  --primary: #4847B4;
   --dark:   #1e1e2f;
   --light:  #ffffff;
   --grey:   #f4f6fa;
   --radius: 0.75rem;
   --shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body { height: 100%; }
 
 body {
-  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-  background: var(--grey);
-  color: var(--dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #111;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-align: center;
 }
-
-/* リンク */
-a { color: var(--primary); text-decoration: none; }
-ul { list-style: inside; margin-left: 1rem; }
-
-/* レイアウト：ヘッダー */
 header {
-  position: sticky; top: 0; z-index: 1000;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 2rem;
-  background: var(--light);
-  box-shadow: var(--shadow);
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #eee;
 }
-header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+main {
+  padding: 2rem 1rem;
+}
+footer {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #eee;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background: #111;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background: #333;
+}
 
-/* ナビ（button と a を同じ見た目に） */
-nav { display: flex; align-items: center; }
 nav button,
 nav a {
   background: transparent;
   border: none;
   font: inherit;
-  color: var(--dark);
+  color: var(--dark);          /* ← ヘッダーはダーク色で統一 */
   margin-left: 1.25rem;
   cursor: pointer;
   position: relative;
   padding-bottom: 4px;
   transition: color .3s;
-  text-decoration: none; /* a の下線を消す */
+  text-decoration: none;       /* ← リンクの下線消す */
 }
-nav button:hover,
-nav a:hover,
-nav button[aria-current="page"],
-nav a[aria-current="page"] {
+nav button:hover, nav button[aria-current="page"],
+nav a:hover,     nav a[aria-current="page"] {
   color: var(--primary);
 }
+
 nav button[aria-current="page"]::after,
 nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 2px;
-  background: var(--primary);
-}
-nav button:focus-visible,
-nav a:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* メイン */
-main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
-
-/* ヒーロー */
-.hero {
-  background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
-  color: var(--light);
-  text-align: center;
-  padding: 5rem 1rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  animation: fadeIn 1s ease-out;
-}
-.hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
-.hero p  { font-size: 1.1rem; }
-
-/* セクション＆カード */
-.section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
-.card {
-  background: var(--light);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  margin-bottom: 1.25rem;
-  animation: fadeIn .5s ease-out;
-}
-
-/* フォーム */
-form { display: grid; gap: 1rem; max-width: 640px; margin: 0 auto; }
-label { font-weight: 600; }
-input, textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccd0dd;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  width: 100%;
-  background: #fff;
-}
-input[type="submit"] {
-  background: var(--primary);
-  color: var(--light);
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.8rem 1.2rem;
-  border-radius: var(--radius);
-  transition: background .3s, transform .06s;
-}
-input[type="submit"]:hover { background: #3a3994; }
-input[type="submit"]:active { transform: translateY(1px); }
-
-/* フッター */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #666;
-  font-size: .85rem;
-}
-
-/* フェードアニメ */
-.fade-enter { opacity: 0; transform: translateY(10px); }
-.fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* モバイル調整 */
-@media (max-width: 640px) {
-  header { padding: .75rem 1rem; }
-  nav button, nav a { margin-left: .75rem; }
-  .hero { padding: 3.5rem 1rem; }
-  .hero h2 { font-size: 2rem; }
+  content:""; position:absolute; left:0; right:0; bottom:0;
+  height:2px; background: var(--primary);
 }
