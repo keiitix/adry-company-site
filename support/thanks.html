@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>送信完了 | Adry株式会社</title>
+
+  <!-- Web Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon / OGP -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
+  <meta property="og:image" content="ogp.png">
+  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --primary: #4847B4;
+      --dark:   #1e1e2f;
+      --light:  #ffffff;
+      --grey:   #f4f6fa;
+      --radius: 0.75rem;
+      --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+      background: var(--grey);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    a { color: var(--primary); text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--light);
+      box-shadow: var(--shadow);
+    }
+    nav a {
+      margin-left: 1.25rem;
+      color: var(--dark);
+      position: relative;
+      padding-bottom: 4px;
+    }
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--primary);
+    }
+    nav a[aria-current="page"]::after {
+      content:"";
+      position:absolute; left:0; right:0; bottom:0;
+      height:2px;
+      background: var(--primary);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
+      color: var(--light);
+      text-align: center;
+      padding: 5rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      animation: fadeIn 1s ease-out;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      opacity: .9;
+      font-size: 1.05rem;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      animation: fadeIn .5s ease-out;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: var(--primary);
+      color: var(--light);
+      border-radius: 999px;
+      font-weight: 600;
+      transition: background .25s;
+    }
+    .btn-back:hover {
+      background: #3a3994;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color:#666;
+      font-size: .85rem;
+    }
+    footer a { margin: 0 0.4rem; }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px;">
+    <nav>
+      <a href="/">ホーム</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/guidelines/">ガイドライン</a>
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/data-ai/">データ・AI</a>
+      <a href="/support/" aria-current="page">問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>送信が完了しました</h1>
+      <p>お問い合わせありがとうございました。<br>確認し次第、担当よりご返信いたします。</p>
+    </section>
+
+    <div class="card">
+      <p>通常 ５〜７ 営業日以内にご返信いたします。 内容によってはお時間をいただく場合があります。<br>しばらくお待ちくださいませ。</p>
+
+
+      <a href="/" class="btn-back">トップへ戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Adry株式会社. All rights reserved. |
+    <a href="/terms/">利用規約</a> |
+    <a href="/guidelines/">ガイドライン</a> |
+    <a href="/privacy/">プライバシーポリシー</a> |
+    <a href="/data-ai/">データ・AI</a> |
+    <a href="/support/">問い合わせ</a>
+  </footer>
+
+</body>
+</html>
