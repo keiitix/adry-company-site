@@ -222,7 +222,7 @@
       <a href="/guidelines/">ガイドライン</a>
       <a href="/privacy/">プライバシーポリシー</a>
       <a href="/data-ai/">データ・AI</a>
-      <a href="/support/" aria-current="page">問い合わせ</a> <!-- 👈 現在ページ -->
+      <a href="/support/" aria-current="page">問い合わせ</a>
     </nav>
   </header>
 
@@ -235,33 +235,65 @@
 
     <!-- お問い合わせフォーム -->
     <article class="card">
-        <section class="section">
-            <h2>フォームからお問い合わせ</h2>
-            <p style="font-size:0.9rem; color:#555; margin-bottom:1rem;">
-                内容によってはお時間をいただく場合があります。
-            </p>
-            <form action="https://formsubmit.co/kloss.ww.jp@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="【Adry】お問い合わせが届きました" />
-                <input type="hidden" name="_autoresponse" value="お問い合わせありがとうございます。内容を確認次第ご返信いたします。" />
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <label for="name">お名前</label>
-                <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
-                <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" required placeholder="例：example@gmail.com" />
-                <label for="type">お問い合わせ種別</label>
-                <select id="type" name="type" required>
-                    <option value="">選択してください</option>
-                    <option value="general">サービス全般について</option>
-                    <option value="trouble">アプリの不具合・トラブル</option>
-                    <option value="business">取材・ビジネス/協業のご相談</option>
-                    <option value="other">その他</option>
-                </select>
-                <label for="message">お問い合わせ内容</label>
-                <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を入力してください"></textarea>
-                <input type="submit" value="送信する" />
-            </form>
-        </section>
+      <section class="section">
+        <h2>フォームからお問い合わせ</h2>
+        <p style="font-size:0.9rem; color:#555; margin-bottom:1rem;">
+          内容によってはお時間をいただく場合があります。
+        </p>
+
+        <!-- ▼ Web3Forms に変更済み -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms 必須：アクセスキー -->
+          <input type="hidden" name="access_key" value="8f8589b5-7094-4da8-9a25-38747f99ac3d" />
+          <!-- 件名 -->
+          <input type="hidden" name="subject" value="【Adry】お問い合わせが届きました" />
+          <!-- 差出人名（メールに表示される） -->
+          <input type="hidden" name="from_name" value="Adry お問い合わせフォーム" />
+          <!-- 必要ならサンクスページURLを追加
+          <input type="hidden" name="redirect" value="https://adry.jp/support/thanks">
+          -->
+
+          <label for="name">お名前</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="例：山田 太郎"
+          />
+
+          <label for="email">メールアドレス</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="例：example@gmail.com"
+          />
+
+          <label for="type">お問い合わせ種別</label>
+          <select id="type" name="type" required>
+            <option value="">選択してください</option>
+            <option value="general">サービス全般について</option>
+            <option value="trouble">アプリの不具合・トラブル</option>
+            <option value="business">取材・ビジネス/協業のご相談</option>
+            <option value="other">その他</option>
+          </select>
+
+          <label for="message">お問い合わせ内容</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            placeholder="お問い合わせ内容を入力してください"
+          ></textarea>
+
+          <div class="btn-row">
+            <input type="submit" value="送信する" />
+          </div>
+        </form>
+      </section>
     </article>
   </main>
 
