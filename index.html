@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adry株式会社</title>
+  <title>Ａｕｄｒｅｙ合同会社</title>
   <!-- Web Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Favicon / OGP -->
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
   <meta property="og:image" content="ogp.png">
   <meta property="og:url" content="https://adry.jp/">
@@ -21,14 +22,54 @@
        変数・リセット
     ------------------------------ */
     :root {
-      --primary: #4847B4;          /* ブランドカラー */
-      --dark:   #1e1e2f;
-      --light:  #ffffff;
-      --grey:   #f4f6fa;
+      --color-background-canvas: #F7F7F8;
+      --color-background-surface: #EEEFF1;
+      --color-border-default: #DEDEE3;
+      --color-text-primary: #17181C;
+      --color-text-secondary: #3F404A;
+      --color-brand-primary: #27FE12;
+      --color-brand-hover: #1CD10B;
+      --color-brand-active: #16A608;
+      --color-brand-indigo-300: #9EFE95;
+      --color-brand-indigo-400: #6BFE5D;
+      --color-accent-highlight: #D7D342;
+      --text-on-brand: #17181C;
+      --primary: var(--color-brand-primary);
+      --primary-hover: var(--color-brand-hover);
+      --primary-active: var(--color-brand-active);
+      --dark: var(--color-text-primary);
+      --light: var(--color-background-surface);
+      --grey: var(--color-background-canvas);
+      --border: var(--color-border-default);
+      --text-secondary: var(--color-text-secondary);
       --radius: 0.75rem;
-      --shadow: 0 6px 16px rgba(0,0,0,0.06);
+      --shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
-    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-background-canvas: #17181C;
+        --color-background-surface: #28282F;
+        --color-border-default: #3F404A;
+        --color-text-primary: #F7F7F8;
+        --color-text-secondary: #DEDEE3;
+        --color-brand-primary: #6BFE5D;
+        --color-brand-hover: #9EFE95;
+        --color-brand-active: #27FE12;
+        --color-brand-indigo-300: #9EFE95;
+        --color-brand-indigo-400: #6BFE5D;
+        --color-accent-highlight: #D7D342;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Poppins', 'Helvetica Neue', sans-serif;
       background: var(--grey);
@@ -36,63 +77,104 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: var(--primary); text-decoration: none; }
-    ul { list-style: inside; margin-left: 1rem; }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: inside;
+      margin-left: 1rem;
+    }
 
     /* ------------------------------
        レイアウト
     ------------------------------ */
     header {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 1rem 2rem;
       background: var(--light);
       box-shadow: var(--shadow);
     }
-    header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
-   nav button,
-nav a {
-  background: transparent;
-  border: none;
-  font: inherit;
-  color: var(--dark);
-  margin-left: 1.25rem;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color .3s;
-  text-decoration: none;
-}
 
-nav button:hover,
-nav a:hover,
-nav button[aria-current="page"],
-nav a[aria-current="page"] {
-  color: var(--primary);
-}
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
 
-nav button[aria-current="page"]::after,
-nav a[aria-current="page"]::after {
-  content:"";
-  position:absolute; left:0; right:0; bottom:0;
-  height:2px; background: var(--primary);
-}
+    nav button,
+    nav a {
+      background: transparent;
+      border: none;
+      font: inherit;
+      color: var(--dark);
+      margin-left: 1.25rem;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color .3s;
+      text-decoration: none;
+    }
 
-    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+    nav button:hover,
+    nav a:hover,
+    nav button[aria-current="page"],
+    nav a[aria-current="page"] {
+      color: var(--primary);
+    }
+
+    nav button[aria-current="page"]::after,
+    nav a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
 
     /* ヒーロー */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
-      color: var(--light);
-      text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--color-brand-indigo-400) 0%, var(--primary) 55%, var(--color-accent-highlight) 100%);
+      color: var(--text-on-brand);
+      text-align: center;
+      padding: 5rem 1rem;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       animation: fadeIn 1s ease-out;
     }
-    .hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .hero p  { font-size: 1.1rem; }
+
+    .hero h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
 
     /* セクション共通 */
-    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
     .card {
       background: var(--light);
       border-radius: var(--radius);
@@ -103,40 +185,85 @@ nav a[aria-current="page"]::after {
     }
 
     /* フォーム */
-    form { display: grid; gap: 1rem; }
-    label { font-weight: 600; }
-    input, textarea {
-      padding: 0.75rem; border: 1px solid #ccd0dd; border-radius: var(--radius);
-      font-size: 1rem; width: 100%;
+    form {
+      display: grid;
+      gap: 1rem;
     }
-    input[type="submit"] {
-      background: var(--primary); color: var(--light); border: none;
-      cursor: pointer; font-weight: 600; transition: background .3s;
-    }
-    input[type="submit"]:hover { background: #3a3994; }
 
-    footer { text-align: center; padding: 2rem 1rem; color:#666; font-size: .85rem; }
+    label {
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      width: 100%;
+      background: var(--grey);
+      color: var(--dark);
+    }
+
+    input[type="submit"] {
+      background: var(--primary);
+      color: var(--text-on-brand);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .3s;
+    }
+
+    input[type="submit"]:hover {
+      background: var(--primary-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: .85rem;
+    }
 
     /* フェードアニメ */
-    .fade-enter { opacity: 0; transform: translateY(10px); }
-    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(10px);
+    }
 
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    .fade-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all .4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- ------------- Header ------------- -->
-<header>
-  <img src="assets/AdryLogo.png" alt="Adryロゴ" style="height: 40px; vertical-align: middle; margin-right: 1rem;">
-  <nav>
-    <button id="nav-home"       onclick="navigateTo('home')">ホーム</button>
+  <header>
+  <img src="assets/greenLogo.png" alt="Adryロゴ" style="height:36px; vertical-align: middle; margin-right: 1rem;">
+    <nav>
+      <button id="nav-home" onclick="navigateTo('home')">ホーム</button>
       <a href="/terms/">利用規約</a>
       <a href="/guidelines/">ガイドライン</a>
       <a href="/privacy/">プライバシーポリシー</a>
       <a href="/data-ai/">データ・AI</a>
       <a href="/support/">問い合わせ</a>
-  </nav>
-</header>
+    </nav>
+  </header>
 
 
   <!-- ------------- Content ------------- -->
@@ -144,7 +271,7 @@ nav a[aria-current="page"]::after {
 
   <!-- ------------- Footer ------------- -->
   <footer>
-    © 2025 Adry株式会社. All rights reserved. |
+    © 2025 Ａｕｄｒｅｙ合同会社. All rights reserved. |
     <a href="/terms/">利用規約</a> |
     <a href="/guidelines/">ガイドライン</a> |
     <a href="/privacy/">プライバシーポリシー</a> |
@@ -166,7 +293,7 @@ nav a[aria-current="page"]::after {
         <section class="section">
           <h2>会社概要</h2>
           <div class="card">
-            <p><strong>社名：</strong> Adry株式会社</p>
+            <p><strong>社名：</strong> Ａｕｄｒｅｙ合同会社</p>
             <p><strong>設立：</strong> 2025年</p>
             <p><strong>所在地：</strong> 大阪府吹田市山手町3−9−13-207</p>
             <p><strong>代表：</strong> 中村研斗</p>
@@ -204,27 +331,27 @@ nav a[aria-current="page"]::after {
     function navigateTo(key) {
       const content = document.getElementById('content');
       document.querySelectorAll('nav button, nav a')
-      .forEach(el => el.removeAttribute('aria-current'));
+        .forEach(el => el.removeAttribute('aria-current'));
 
-  // ★ クリックされたSPA用ボタンにだけ付け直す
+      // ★ クリックされたSPA用ボタンにだけ付け直す
       const active = document.getElementById(`nav-${key}`);
       if (active) active.setAttribute('aria-current', 'page');
 
-  // フェード効果＋描画
-  content.classList.add('fade-enter');
-  setTimeout(()=>{
-    content.innerHTML = pages[key] || pages.home;
-    content.classList.remove('fade-enter');
-    content.classList.add('fade-enter-active');
-    setTimeout(()=>content.classList.remove('fade-enter-active'),400);
-  },150);
-}
+      // フェード効果＋描画
+      content.classList.add('fade-enter');
+      setTimeout(() => {
+        content.innerHTML = pages[key] || pages.home;
+        content.classList.remove('fade-enter');
+        content.classList.add('fade-enter-active');
+        setTimeout(() => content.classList.remove('fade-enter-active'), 400);
+      }, 150);
+    }
 
 
     // ------------------------------
     // 📧 フォーム送信 (ダミー)
     // ------------------------------
-    function handleSubmit(e){
+    function handleSubmit(e) {
       e.preventDefault();
       alert('お問い合わせありがとうございます！🎉\n担当者より折り返しご連絡いたします。');
       console.log('✅ お問い合わせフォーム送信完了');
@@ -232,7 +359,8 @@ nav a[aria-current="page"]::after {
     }
 
     // 初期表示
-    window.addEventListener('DOMContentLoaded', ()=> navigateTo('home'));
+    window.addEventListener('DOMContentLoaded', () => navigateTo('home'));
   </script>
 </body>
+
 </html>

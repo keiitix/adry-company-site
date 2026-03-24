@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>プライバシーポリシー | Adry株式会社</title>
+  <title>プライバシーポリシー | Ａｕｄｒｅｙ合同会社</title>
   <!-- Web Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Favicon / OGP -->
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
   <meta property="og:image" content="ogp.png">
   <meta property="og:url" content="https://adry.jp/">
@@ -21,12 +21,43 @@
        変数・リセット
     ------------------------------ */
     :root {
-      --primary: #4847B4;          /* ブランドカラー */
-      --dark:   #1e1e2f;
-      --light:  #ffffff;
-      --grey:   #f4f6fa;
+      --color-background-canvas: #F7F7F8;
+      --color-background-surface: #EEEFF1;
+      --color-border-default: #DEDEE3;
+      --color-text-primary: #17181C;
+      --color-text-secondary: #3F404A;
+      --color-brand-primary: #27FE12;
+      --color-brand-hover: #1CD10B;
+      --color-brand-active: #16A608;
+      --color-brand-indigo-300: #9EFE95;
+      --color-brand-indigo-400: #6BFE5D;
+      --color-accent-highlight: #D7D342;
+      --text-on-brand: #17181C;
+      --primary: var(--color-brand-primary);
+      --primary-hover: var(--color-brand-hover);
+      --primary-active: var(--color-brand-active);
+      --dark: var(--color-text-primary);
+      --light: var(--color-background-surface);
+      --grey: var(--color-background-canvas);
+      --border: var(--color-border-default);
+      --text-secondary: var(--color-text-secondary);
       --radius: 0.75rem;
       --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-background-canvas: #17181C;
+        --color-background-surface: #28282F;
+        --color-border-default: #3F404A;
+        --color-text-primary: #F7F7F8;
+        --color-text-secondary: #DEDEE3;
+        --color-brand-primary: #6BFE5D;
+        --color-brand-hover: #9EFE95;
+        --color-brand-active: #27FE12;
+        --color-brand-indigo-300: #9EFE95;
+        --color-brand-indigo-400: #6BFE5D;
+        --color-accent-highlight: #D7D342;
+      }
     }
     *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
     body {
@@ -82,8 +113,8 @@ nav a[aria-current="page"]::after {
 
     /* ヒーロー */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
-      color: var(--light);
+      background: linear-gradient(135deg, var(--color-brand-indigo-400) 0%, var(--primary) 55%, var(--color-accent-highlight) 100%);
+      color: var(--text-on-brand);
       text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
       box-shadow: var(--shadow);
       animation: fadeIn 1s ease-out;
@@ -106,16 +137,18 @@ nav a[aria-current="page"]::after {
     form { display: grid; gap: 1rem; }
     label { font-weight: 600; }
     input, textarea {
-      padding: 0.75rem; border: 1px solid #ccd0dd; border-radius: var(--radius);
+      padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius);
       font-size: 1rem; width: 100%;
+      background: var(--grey);
+      color: var(--dark);
     }
     input[type="submit"] {
-      background: var(--primary); color: var(--light); border: none;
+      background: var(--primary); color: var(--text-on-brand); border: none;
       cursor: pointer; font-weight: 600; transition: background .3s;
     }
-    input[type="submit"]:hover { background: #3a3994; }
+    input[type="submit"]:hover { background: var(--primary-hover); }
 
-    footer { text-align: center; padding: 2rem 1rem; color:#666; font-size: .85rem; }
+    footer { text-align: center; padding: 2rem 1rem; color: var(--text-secondary); font-size: .85rem; }
 
     /* フェードアニメ */
     .fade-enter { opacity: 0; transform: translateY(10px); }
@@ -129,7 +162,7 @@ nav a[aria-current="page"]::after {
 <body>
   <!-- Header（ロゴはルート相対パスに） -->
   <header>
-    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px; vertical-align:middle; margin-right:1rem;">
+    <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px; vertical-align:middle; margin-right:1rem;">
     <nav>
       <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
       <a href="/terms/">利用規約</a>
@@ -143,17 +176,82 @@ nav a[aria-current="page"]::after {
   <main>
     <section class="hero">
       <h1>プライバシーポリシー</h1>
-      <p class="muted">最終改定日：2025年6月7日</p>
     </section>
 
     <article class="card policy">
-    <section class="section"> <h2>Adry プライバシーポリシー</h2> <div class="card"><p>Adry（以下「本サービス」）は、利用者のプライバシーを尊重し、その保護を最重要事項として位置付けています。本プライバシーポリシーは、利用者の個人情報および関連データの取扱いについて、明確かつ誠実に説明することを目的としています。</p> <h3>第1章：基本方針</h3> <p>本サービスは、利用者の同意に基づき、個人情報の取得・利用・管理を行います。利用者の信頼に応えるため、透明性と安全性を確保する取り組みを継続してまいります。</p> <h3>第2章：収集する情報</h3> <p>Adryが収集する情報には以下が含まれます。</p> <ul> <li>ユーザーが入力する情報（ニックネーム、プロフィール画像など）</li> <li>投稿内容やコメントなどのユーザー生成コンテンツ</li> <li>Firebase認証情報（Google、Appleなどのアカウント識別子）</li> <li>利用者が本サービス内で行う操作に関連する行動データ（ログイン時間、Table参加情報など）</li> </ul> <h3>第3章：トラッキングと広告について</h3> <p>本サービスでは、ユーザーの行動を追跡するトラッキング技術（Cookie、広告ID等）を一切使用しておりません。また、ユーザー情報を広告目的で第三者に提供することは一切ございません。</p> <h3>第4章：情報の利用目的</h3> <p>収集した情報は以下の目的で使用されます。</p> <ul> <li>サービスの提供、維持、保守、改善</li> <li>不正利用の防止、安全性の確保</li> <li>利用者への重要なお知らせや通知</li> <li>統計的分析による機能改善（匿名化処理済み）</li> </ul> <h3>第5章：AIとデータの取り扱い</h3> <p>Adryでは、AI技術を用いて投稿内容の感情分析および文脈解析を行います。これにより、ユーザーの体験を向上させる機能（おすすめコンテンツ表示など）を提供します。ただし、AIによる判定は補助的なものであり、最終的な判断は常に利用者自身に委ねられます。</p> <h3>第6章：データの保存と削除</h3> <p>ユーザーの投稿データは、Firebaseなどの安全なクラウドストレージに保存されます。利用者が退会を希望した場合、本人確認の後にアカウントおよび関連データは速やかに削除されます。また、利用が一定期間行われていないアカウントについては、予告なく削除される場合があります。</p> <h3>第7章：第三者提供について</h3> <p>以下の場合を除き、利用者の情報を第三者に提供することはありません。</p> <ul> <li>法令に基づく開示要請があった場合</li> <li>犯罪行為や違法行為が確認された場合に警察や関係機関に協力する場合</li> <li>ユーザーが明示的に同意した場合</li> </ul> <h3>第8章：セキュリティ体制</h3> <p>Adryは、データの暗号化、認証強化、不正アクセス防止のためのファイアウォールなど、技術的・組織的な安全対策を講じています。また、モデレータおよびAIによる二重の監視体制を設け、コミュニティの安全性を維持しています。</p> <h3>第9章：ユーザーの権利</h3> <p>利用者は、自身の情報に関する以下の権利を有します。</p> <ul> <li>情報の確認・訂正の請求</li> <li>アカウントおよび情報の削除の請求</li> <li>サービスに関するお問い合わせや異議申し立て</li> </ul> <h3>第10章：未成年の利用</h3> <p>未成年者の利用にあたっては、保護者の同意を得た上でご利用ください。違法または不適切なコンテンツに対するフィルター機能および即時通報機能を提供しています。</p> <h3>第11章：変更と通知</h3> <p>本ポリシーは、法令改正やサービス変更に伴い、随時改定されることがあります。変更後のポリシーは、本サービス上で掲示された時点で効力を発します。重要な変更がある場合は、適切な手段により利用者に通知いたします。</p><h3>最終改定日</h3> <p>2025年6月7日</p> </div></section>
+      <section class="section">
+        <h2>プライバシーポリシー</h2>
+        <div class="card">
+          <p>本プライバシーポリシーは、Ａｕｄｒｅｙ合同会社（以下「当社」）が提供するアプリケーション「Adry」およびその有料サブスクリプション機能「Compass Plus」（以下「本サービス」）において、利用者（以下「お客さま」）の個人情報・利用情報をどのように取り扱うかを定めるものです。<br />
+            本サービスをご利用いただく前に、必ず本ポリシーをご確認ください。
+          </p>
 
+          <h3>1. 収集する情報</h3>
+          <p>当社は、本サービスの提供に必要な範囲で、以下の情報を取得します。</p>
+          <p><strong>・ユーザー登録・サインイン時</strong><br />
+            Firebase Authentication（Google、Appleなど）を用いて、ユーザーID、メールアドレス、Apple ID情報、認証トークンを取得します。
+          </p>
+          <p><strong>・利用時に自動的に収集する情報</strong><br />
+            アプリの利用履歴（閲覧履歴・投稿履歴・リアクション履歴）<br />
+            端末情報（デバイス名、OSバージョン、アプリバージョン等）<br />
+            クラッシュログ・アクセスログ・エラーレポート
+          </p>
+          <p><strong>・有料課金利用時</strong><br />
+            AppleのApp Store課金（In-App Purchase）を通じて、決済情報がAppleに送信されます。当社はお客さまのクレジットカード情報を一切取得しません。
+          </p>
+          <p><strong>・生成AI機能利用時</strong><br />
+            投稿や入力テキスト、感情分析結果、アドバイス生成時の内容が、OpenAI等の外部APIサービスに送信される場合があります。
+          </p>
+
+          <h3>2. 利用目的</h3>
+          <p>当社は、収集した情報を以下の目的で利用します。</p>
+          <ul>
+            <li>本サービスの提供・機能改善・不具合対応のため</li>
+            <li>推薦機能や生成AIによる分析・提案を行うため</li>
+            <li>不正利用の防止やセキュリティ確保のため</li>
+            <li>お知らせ・重要な通知の配信のため</li>
+            <li>有料課金機能の提供および管理のため</li>
+            <li>法令に基づく開示対応のため</li>
+          </ul>
+
+          <h3>3. 外部サービスとの連携</h3>
+          <p>当社は以下の外部サービスと連携し、必要最小限の情報を送信する場合があります。</p>
+          <ul>
+            <li>Firebase（Google LLC）：認証・データ保存・クラッシュログ収集</li>
+            <li>OpenAI（OpenAI, L.L.C.）：入力テキストの解析・生成AI応答</li>
+            <li>Apple（Apple Inc.）：課金処理（App Store）</li>
+          </ul>
+          <p>これらの外部サービスでは、各社のプライバシーポリシーが適用されます。<br />
+            お客さまはそれぞれのサービスの規約・ポリシーをご確認ください。
+          </p>
+
+          <h3>4. 第三者提供</h3>
+          <p>当社は、法令に基づく場合を除き、お客さまの情報を第三者に提供することはありません。</p>
+
+          <h3>5. 保存期間・削除</h3>
+          <p>アカウント情報や投稿データは、利用契約の継続中は保存されます。<br />
+            ユーザーがアカウント削除を申請した場合、当社は合理的な期間内にFirebase上の個人情報・投稿データを削除します。<br />
+            外部サービス（OpenAI等）に送信された情報については、当該サービスのポリシーに従います。
+          </p>
+
+          <h3>6. 安全管理</h3>
+          <p>当社は、個人情報の漏えい・滅失・改ざん等を防止するため、Firebaseセキュリティルールやアクセス制御など、適切な安全管理措置を講じます。</p>
+
+          <h3>7. 未成年の利用</h3>
+          <p>未成年のお客さまは、親権者等の法定代理人の同意を得たうえで本サービスをご利用ください。利用があった場合、同意があったものとみなします。</p>
+
+          <h3>8. ポリシーの変更</h3>
+          <p>当社は、必要に応じて本プライバシーポリシーを変更することがあります。重要な変更がある場合は、本アプリ内またはウェブサイト上でお知らせします。</p>
+
+          <h3>9. 準拠法</h3>
+          <p>本ポリシーは日本法に準拠し、紛争が生じた場合は当社所在地を管轄する地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+        </div>
+      </section>
     </article>
   </main>
 
    <footer>
-    © 2025 Adry株式会社. All rights reserved. |
+    © 2025 Ａｕｄｒｅｙ合同会社. All rights reserved. |
     <a href="/terms/">利用規約</a> |
     <a href="/guidelines/">ガイドライン</a> |
     <a href="/privacy/">プライバシーポリシー</a> |

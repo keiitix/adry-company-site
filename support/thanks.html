@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>送信完了 | Adry株式会社</title>
+  <title>送信完了 | Ａｕｄｒｅｙ合同会社</title>
 
   <!-- Web Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Favicon / OGP -->
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:title" content="Adry株式会社">
+  <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
   <meta property="og:image" content="ogp.png">
   <meta property="og:url" content="https://adry.jp/">
@@ -19,12 +19,43 @@
 
   <style>
     :root {
-      --primary: #4847B4;
-      --dark:   #1e1e2f;
-      --light:  #ffffff;
-      --grey:   #f4f6fa;
+      --color-background-canvas: #F7F7F8;
+      --color-background-surface: #EEEFF1;
+      --color-border-default: #DEDEE3;
+      --color-text-primary: #17181C;
+      --color-text-secondary: #3F404A;
+      --color-brand-primary: #27FE12;
+      --color-brand-hover: #1CD10B;
+      --color-brand-active: #16A608;
+      --color-brand-indigo-300: #9EFE95;
+      --color-brand-indigo-400: #6BFE5D;
+      --color-accent-highlight: #D7D342;
+      --text-on-brand: #17181C;
+      --primary: var(--color-brand-primary);
+      --primary-hover: var(--color-brand-hover);
+      --primary-active: var(--color-brand-active);
+      --dark: var(--color-text-primary);
+      --light: var(--color-background-surface);
+      --grey: var(--color-background-canvas);
+      --border: var(--color-border-default);
+      --text-secondary: var(--color-text-secondary);
       --radius: 0.75rem;
       --shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-background-canvas: #17181C;
+        --color-background-surface: #28282F;
+        --color-border-default: #3F404A;
+        --color-text-primary: #F7F7F8;
+        --color-text-secondary: #DEDEE3;
+        --color-brand-primary: #6BFE5D;
+        --color-brand-hover: #9EFE95;
+        --color-brand-active: #27FE12;
+        --color-brand-indigo-300: #9EFE95;
+        --color-brand-indigo-400: #6BFE5D;
+        --color-accent-highlight: #D7D342;
+      }
     }
     *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
     body {
@@ -70,8 +101,8 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #6564d6 100%);
-      color: var(--light);
+      background: linear-gradient(135deg, var(--color-brand-indigo-400) 0%, var(--primary) 55%, var(--color-accent-highlight) 100%);
+      color: var(--text-on-brand);
       text-align: center;
       padding: 5rem 1rem;
       border-radius: var(--radius);
@@ -103,19 +134,19 @@
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
       background: var(--primary);
-      color: var(--light);
+      color: var(--text-on-brand);
       border-radius: 999px;
       font-weight: 600;
       transition: background .25s;
     }
     .btn-back:hover {
-      background: #3a3994;
+      background: var(--primary-hover);
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem 3rem;
-      color:#666;
+      color: var(--text-secondary);
       font-size: .85rem;
     }
     footer a { margin: 0 0.4rem; }
@@ -129,7 +160,7 @@
 
 <body>
   <header>
-    <img src="/assets/AdryLogo.png" alt="Adryロゴ" style="height:40px;">
+    <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
     <nav>
       <a href="/">ホーム</a>
       <a href="/terms/">利用規約</a>
@@ -155,7 +186,7 @@
   </main>
 
   <footer>
-    © 2025 Adry株式会社. All rights reserved. |
+    © 2025 Ａｕｄｒｅｙ合同会社. All rights reserved. |
     <a href="/terms/">利用規約</a> |
     <a href="/guidelines/">ガイドライン</a> |
     <a href="/privacy/">プライバシーポリシー</a> |
