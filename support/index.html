@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>お問い合わせ | Ａｕｄｒｅｙ合同会社</title>
-  <!-- Web Font -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon / OGP -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <link rel="icon" href="/favicon.ico">
   <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
   <meta property="og:image" content="ogp.png">
@@ -16,405 +16,91 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ------------- CSS ------------- -->
-  <style>
-    /* ------------------------------
-       変数・リセット
-    ------------------------------ */
-    :root {
-      --color-background-canvas: #F7F7F8;
-      --color-background-surface: #EEEFF1;
-      --color-border-default: #DEDEE3;
-      --color-text-primary: #17181C;
-      --color-text-secondary: #3F404A;
-      --color-brand-primary: #27FE12;
-      --color-brand-hover: #1CD10B;
-      --color-brand-active: #16A608;
-      --color-brand-indigo-300: #9EFE95;
-      --color-brand-indigo-400: #6BFE5D;
-      --color-accent-highlight: #D7D342;
-      --text-on-brand: #17181C;
-      --primary: var(--color-brand-primary);
-      --primary-hover: var(--color-brand-hover);
-      --primary-active: var(--color-brand-active);
-      --dark: var(--color-text-primary);
-      --light: var(--color-background-surface);
-      --grey: var(--color-background-canvas);
-      --border: var(--color-border-default);
-      --text-secondary: var(--color-text-secondary);
-      --radius: 0.75rem;
-      --shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-background-canvas: #17181C;
-        --color-background-surface: #28282F;
-        --color-border-default: #3F404A;
-        --color-text-primary: #F7F7F8;
-        --color-text-secondary: #DEDEE3;
-        --color-brand-primary: #6BFE5D;
-        --color-brand-hover: #9EFE95;
-        --color-brand-active: #27FE12;
-        --color-brand-indigo-300: #9EFE95;
-        --color-brand-indigo-400: #6BFE5D;
-        --color-accent-highlight: #D7D342;
-      }
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
-      background: var(--grey);
-      color: var(--dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: inside;
-      margin-left: 1rem;
-    }
-
-    /* ------------------------------
-       レイアウト
-    ------------------------------ */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--light);
-      box-shadow: var(--shadow);
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    nav button,
-    nav a {
-      background: transparent;
-      border: none;
-      font: inherit;
-      color: var(--dark);
-      margin-left: 1.25rem;
-      cursor: pointer;
-      position: relative;
-      padding-bottom: 4px;
-      transition: color .3s;
-      text-decoration: none;
-    }
-
-    nav button:hover,
-    nav a:hover,
-    nav button[aria-current="page"],
-    nav a[aria-current="page"] {
-      color: var(--primary);
-    }
-
-    nav button[aria-current="page"]::after,
-    nav a[aria-current="page"]::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    /* ヒーロー */
-    .hero {
-      background: linear-gradient(135deg, var(--color-brand-indigo-400) 0%, var(--primary) 55%, var(--color-accent-highlight) 100%);
-      color: var(--text-on-brand);
-      text-align: center;
-      padding: 5rem 1rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      animation: fadeIn 1s ease-out;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      opacity: .9;
-    }
-
-    /* セクション共通 */
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .card {
-      background: var(--light);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
-      margin-top: 1.5rem;
-      animation: fadeIn .5s ease-out;
-    }
-
-    /* フォーム */
-    form {
-      display: grid;
-      gap: 1rem;
-      margin-top: .5rem;
-    }
-
-    label {
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .label-sub {
-      font-weight: 400;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-
-    input,
-    textarea,
-    select {
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 0.95rem;
-      width: 100%;
-      background: var(--grey);
-      color: var(--dark);
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .inline {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .inline .field {
-      flex: 1 1 220px;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    .checkbox-row input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      margin-top: 3px;
-    }
-
-    .note {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
-    }
-
-    .btn-row {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 0.5rem;
-    }
-
-    input[type="submit"] {
-      background: var(--primary);
-      color: var(--text-on-brand);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background .3s, transform .1s ease-out;
-      padding: 0.8rem 2.4rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-    }
-
-    input[type="submit"]:hover {
-      background: var(--primary-hover);
-      transform: translateY(-1px);
-    }
-
-    input[type="submit"]:active {
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: var(--text-secondary);
-      font-size: .85rem;
-    }
-
-    footer a {
-      margin: 0 0.4rem;
-    }
-
-    /* フェードアニメ */
-    .fade-enter {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    .fade-enter-active {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all .4s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* レスポンシブ */
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.75rem 1.25rem;
-      }
-
-      nav {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-        margin-bottom: 0.25rem;
-      }
-
-      .hero {
-        padding: 3.5rem 1rem;
-      }
-
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px; vertical-align:middle; margin-right:1rem;">
-    <nav>
-      <a href="/">ホーム</a>
-      <a href="/terms/">利用規約</a>
-      <a href="/guidelines/">ガイドライン</a>
-      <a href="/privacy/">プライバシーポリシー</a>
-      <a href="/data-ai/">データ・AI</a>
-      <a href="/support/" aria-current="page">問い合わせ</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="/">
+        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+      </a>
+      <nav class="site-nav">
+        <a class="nav-link" href="/">ホーム</a>
+        <a class="nav-link" href="/terms/">利用規約</a>
+        <a class="nav-link" href="/guidelines/">ガイドライン</a>
+        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/">データ・AI</a>
+        <a class="nav-link" href="/support/" aria-current="page">問い合わせ</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- ヒーロー -->
-    <section class="hero">
-      <h1>お問い合わせ</h1>
-      <p>サービスに関するご質問、ご相談、取材・協業のご連絡など、<br>お気軽にお送りください。</p>
-    </section>
+  <main class="page-main">
+    <div class="fade-in">
+      <h1 class="page-title">お問い合わせ</h1>
+      <div class="page-underline"></div>
+      <p class="page-lead">サービスに関するご質問、ご相談、取材・協業のご連絡など、<br>お気軽にお送りください。</p>
 
-    <!-- お問い合わせフォーム -->
-    <article class="card">
-      <section class="section">
-        <h2>フォームからお問い合わせ</h2>
-        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1rem;">
-          内容によってはお時間をいただく場合があります。
-        </p>
+      <div class="form-card">
+        <h2 class="section-title">フォームからお問い合わせ</h2>
+        <p class="form-note">内容によってはお時間をいただく場合があります。</p>
 
-        <!-- ▼ Web3Forms に変更済み -->
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms 必須：アクセスキー -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="form-grid">
           <input type="hidden" name="access_key" value="8f8589b5-7094-4da8-9a25-38747f99ac3d" />
-          <!-- 件名 -->
           <input type="hidden" name="subject" value="【Adry】お問い合わせが届きました" />
-          <!-- 差出人名（メールに表示される） -->
           <input type="hidden" name="from_name" value="Adry お問い合わせフォーム" />
           <input type="hidden" name="redirect" value="https://adry.jp/support/thanks">
-          <label for="name">お名前</label>
-          <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
 
-          <label for="email">メールアドレス</label>
-          <input type="email" id="email" name="email" required placeholder="例：example@gmail.com" />
+          <div class="form-field">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
+          </div>
 
-          <label for="type">お問い合わせ種別</label>
-          <select id="type" name="type" required>
-            <option value="">選択してください</option>
-            <option value="general">サービス全般について</option>
-            <option value="trouble">アプリの不具合・トラブル</option>
-            <option value="business">取材・ビジネス/協業のご相談</option>
-            <option value="other">その他</option>
-          </select>
+          <div class="form-field">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required placeholder="例：example@gmail.com" />
+          </div>
 
-          <label for="message">お問い合わせ内容</label>
-          <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を入力してください"></textarea>
+          <div class="form-field">
+            <label for="type">お問い合わせ種別</label>
+            <select id="type" name="type" required>
+              <option value="">選択してください</option>
+              <option value="general">サービス全般について</option>
+              <option value="trouble">アプリの不具合・トラブル</option>
+              <option value="business">取材・ビジネス/協業のご相談</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を入力してください"></textarea>
+          </div>
 
           <div class="btn-row">
-            <input type="submit" value="送信する" />
+            <button class="btn-primary" type="submit">送信する</button>
           </div>
         </form>
-      </section>
-    </article>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    © 2025 Ａｕｄｒｅｙ合同会社. All rights reserved. |
-    <a href="/terms/">利用規約</a> |
-    <a href="/guidelines/">ガイドライン</a> |
-    <a href="/privacy/">プライバシーポリシー</a> |
-    <a href="/data-ai/">データ・AI</a> |
-    <a href="/support/">問い合わせ</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">
+        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+      </a>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/">利用規約</a>
+        <a class="footer-link" href="/guidelines/">ガイドライン</a>
+        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/">データ・AI</a>
+        <a class="footer-link" href="/support/">問い合わせ</a>
+        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+    </div>
   </footer>
 </body>
 

@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ガイドライン | Ａｕｄｒｅｙ合同会社</title>
-  <!-- Web Font -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon / OGP -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <link rel="icon" href="/favicon.ico">
   <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
   <meta property="og:image" content="ogp.png">
@@ -15,173 +15,33 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ------------- CSS ------------- -->
-  <style>
-    /* ------------------------------
-       変数・リセット
-    ------------------------------ */
-    :root {
-      --color-background-canvas: #F7F7F8;
-      --color-background-surface: #EEEFF1;
-      --color-border-default: #DEDEE3;
-      --color-text-primary: #17181C;
-      --color-text-secondary: #3F404A;
-      --color-brand-primary: #27FE12;
-      --color-brand-hover: #1CD10B;
-      --color-brand-active: #16A608;
-      --color-brand-indigo-300: #9EFE95;
-      --color-brand-indigo-400: #6BFE5D;
-      --color-accent-highlight: #D7D342;
-      --text-on-brand: #17181C;
-      --primary: var(--color-brand-primary);
-      --primary-hover: var(--color-brand-hover);
-      --primary-active: var(--color-brand-active);
-      --dark: var(--color-text-primary);
-      --light: var(--color-background-surface);
-      --grey: var(--color-background-canvas);
-      --border: var(--color-border-default);
-      --text-secondary: var(--color-text-secondary);
-      --radius: 0.75rem;
-      --shadow: 0 6px 16px rgba(0,0,0,0.06);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-background-canvas: #17181C;
-        --color-background-surface: #28282F;
-        --color-border-default: #3F404A;
-        --color-text-primary: #F7F7F8;
-        --color-text-secondary: #DEDEE3;
-        --color-brand-primary: #6BFE5D;
-        --color-brand-hover: #9EFE95;
-        --color-brand-active: #27FE12;
-        --color-brand-indigo-300: #9EFE95;
-        --color-brand-indigo-400: #6BFE5D;
-        --color-accent-highlight: #D7D342;
-      }
-    }
-    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
-    body {
-      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
-      background: var(--grey);
-      color: var(--dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--primary); text-decoration: none; }
-    ul { list-style: inside; margin-left: 1rem; }
-
-    /* ------------------------------
-       レイアウト
-    ------------------------------ */
-    header {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem;
-      background: var(--light);
-      box-shadow: var(--shadow);
-    }
-    header h1 { font-size: 1.6rem; font-weight: 700; color: var(--primary); }
-  nav button,
-nav a {
-  background: transparent;
-  border: none;
-  font: inherit;
-  color: var(--dark);
-  margin-left: 1.25rem;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color .3s;
-  text-decoration: none;
-}
-
-nav button:hover,
-nav a:hover,
-nav button[aria-current="page"],
-nav a[aria-current="page"] {
-  color: var(--primary);
-}
-
-nav button[aria-current="page"]::after,
-nav a[aria-current="page"]::after {
-  content:"";
-  position:absolute; left:0; right:0; bottom:0;
-  height:2px; background: var(--primary);
-}
-
-    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
-
-    /* ヒーロー */
-    .hero {
-      background: linear-gradient(135deg, var(--color-brand-indigo-400) 0%, var(--primary) 55%, var(--color-accent-highlight) 100%);
-      color: var(--text-on-brand);
-      text-align: center; padding: 5rem 1rem; border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      animation: fadeIn 1s ease-out;
-    }
-    .hero h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .hero p  { font-size: 1.1rem; }
-
-    /* セクション共通 */
-    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
-    .card {
-      background: var(--light);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 1.25rem;
-      animation: fadeIn .5s ease-out;
-    }
-
-    /* フォーム */
-    form { display: grid; gap: 1rem; }
-    label { font-weight: 600; }
-    input, textarea {
-      padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius);
-      font-size: 1rem; width: 100%;
-      background: var(--grey);
-      color: var(--dark);
-    }
-    input[type="submit"] {
-      background: var(--primary); color: var(--text-on-brand); border: none;
-      cursor: pointer; font-weight: 600; transition: background .3s;
-    }
-    input[type="submit"]:hover { background: var(--primary-hover); }
-
-    footer { text-align: center; padding: 2rem 1rem; color: var(--text-secondary); font-size: .85rem; }
-
-    /* フェードアニメ */
-    .fade-enter { opacity: 0; transform: translateY(10px); }
-    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .4s ease-out; }
-
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-  </style>
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 
 <body>
-  <!-- Header（ロゴはルート相対パスに） -->
-  <header>
-    <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px; vertical-align:middle; margin-right:1rem;">
-    <nav>
-      <a href="/">ホーム</a> <!-- ← ボタンのままだと静的ページでは遷移しないのでa推奨 -->
-      <a href="/terms/">利用規約</a>
-      <a href="/guidelines/" aria-current="page">ガイドライン</a>
-      <a href="/privacy/">プライバシーポリシー</a>
-      <a href="/data-ai/">データ・AI</a>
-      <a href="/support/">問い合わせ</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="/">
+        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+      </a>
+      <nav class="site-nav">
+        <a class="nav-link" href="/">ホーム</a>
+        <a class="nav-link" href="/terms/">利用規約</a>
+        <a class="nav-link" href="/guidelines/" aria-current="page">ガイドライン</a>
+        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/">データ・AI</a>
+        <a class="nav-link" href="/support/">問い合わせ</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>ガイドライン</h1>
-    </section>
-
-    <article class="card policy">
-      <section class="section">
+  <main class="page-main">
+    <div class="fade-in">
+      <h1 class="page-title">ガイドライン</h1>
+      <div class="page-underline"></div>
+      <div class="legal-card">
         <h2>Adryコミュニティガイドライン</h2>
-        <div class="card">
           <p>はじめに<br /><br />
             Adryへようこそ。このプラットフォームは、ユーザー同士が安全で健全なコミュニケーションを通じて知識を深め、つながりを築く場として設計されています。
             私たちは、多様な背景を持つ人々が集まり、尊重し合いながら意見交換を行うことで、新たな発見や共感を得られることを目指しています。
@@ -277,18 +137,25 @@ nav a[aria-current="page"]::after {
             そのためには、皆さん一人ひとりの協力が不可欠です。
             このガイドラインを遵守し、他者を尊重し合いながら、素晴らしいコミュニティを築いていきましょう。
           </p>
-        </div>
-      </section>
-    </article>
+      </div>
+    </div>
   </main>
 
-   <footer>
-    © 2025 Ａｕｄｒｅｙ合同会社. All rights reserved. |
-    <a href="/terms/">利用規約</a> |
-    <a href="/guidelines/">ガイドライン</a> |
-    <a href="/privacy/">プライバシーポリシー</a> |
-    <a href="/data-ai/">データ・AI</a> |
-    <a href="/support/">問い合わせ</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">
+        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+      </a>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/">利用規約</a>
+        <a class="footer-link" href="/guidelines/">ガイドライン</a>
+        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/">データ・AI</a>
+        <a class="footer-link" href="/support/">問い合わせ</a>
+        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+    </div>
   </footer>
 </body>
 </html>
