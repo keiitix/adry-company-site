@@ -28,6 +28,7 @@
       </a>
       <nav class="site-nav">
         <button class="nav-link" id="nav-home" onclick="navigateTo('home')">ホーム</button>
+        <button class="nav-link" id="nav-adry" onclick="navigateTo('adry')">Adry</button>
         <a class="nav-link" href="/terms/">利用規約</a>
         <a class="nav-link" href="/guidelines/">ガイドライン</a>
         <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
@@ -70,9 +71,55 @@
           <div class="hero-orb one"></div>
           <div class="hero-orb two"></div>
           <div class="container hero-inner">
-            <div class="hero-content fade-in">
-              <h1 class="hero-title">強く、楽しく</h1>
-              <p class="hero-subtitle">Adryは人生を通して、夢中を提供します</p>
+            <div class="hero-slider fade-in" data-hero-slider>
+              <div class="hero-slides">
+                <article class="hero-slide is-active no-media">
+                  <div class="hero-content">
+                    <h1 class="hero-title">強く、楽しく</h1>
+                    <p class="hero-subtitle">Adryは人生を通して、夢中を提供します</p>
+                  </div>
+                </article>
+                <article class="hero-slide has-media">
+                  <div class="hero-content">
+                    <h2 class="hero-slide-title">穏やかに興味にふれる</h2>
+                  </div>
+                  <div class="hero-media">
+                    <img src="assets/app/1.png" alt="穏やかに興味にふれる" loading="lazy">
+                  </div>
+                </article>
+                <article class="hero-slide has-media">
+                  <div class="hero-content">
+                    <h2 class="hero-slide-title">他の興味も探せる</h2>
+                  </div>
+                  <div class="hero-media">
+                    <img src="assets/app/2.png" alt="他の興味も探せる" loading="lazy">
+                  </div>
+                </article>
+                <article class="hero-slide has-media">
+                  <div class="hero-content">
+                    <h2 class="hero-slide-title">探した興味が<br>まとまって見える</h2>
+                  </div>
+                  <div class="hero-media">
+                    <img src="assets/app/3.png" alt="探した興味がまとまって見える" loading="lazy">
+                  </div>
+                </article>
+                <article class="hero-slide has-media">
+                  <div class="hero-content">
+                    <h2 class="hero-slide-title">興味を導く手助け</h2>
+                  </div>
+                  <div class="hero-media">
+                    <img src="assets/app/4.png" alt="興味を導く手助け" loading="lazy">
+                  </div>
+                </article>
+                <article class="hero-slide has-media">
+                  <div class="hero-content">
+                    <h2 class="hero-slide-title">今の興味で見えてくる自分はどんな人？</h2>
+                  </div>
+                  <div class="hero-media">
+                    <img src="assets/app/5.png" alt="今の興味で見えてくる自分はどんな人？" loading="lazy">
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -91,6 +138,123 @@
                 <div class="company-value">中村研斗</div>
               </div>
             </div>
+          </div>
+        </section>
+      `,
+      adry: `
+        <section class="adry-page">
+          <a class="adry-home-button" href="/" onclick="navigateTo('home'); return false;" aria-label="ホームへ戻る">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <div class="adry-scroll" data-adry-scroll>
+            <section class="adry-section adry-text-white" data-adry-section style="background-color:#1B4D3E;">
+              <div class="adry-section-inner">
+                <div class="adry-section-grid">
+                  <div class="adry-section-text">
+                    <h2 class="adry-section-title">Adryはデジタルメディアを再定義します</h2>
+                    <p class="adry-section-desc">今やデジタルメディアは混沌の渦の中です。多くの情報が錯綜し日々の生活の中に溶け込んでいます。私たちにとって本当に必要なものは何なのか、これからの時代をどう生きていくか。これは大きなテーマでもあります。<br>Adryは従来のデジタルメディアを再定義し必要な情報と、情報を受け取る感覚や感性をより良いものにするために作られたアプリケーションです。</p>
+                  </div>
+                  <div class="adry-section-art">
+                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
+                      <path d="M 18,38 Q 45,28 82,36" data-adry-path></path>
+                      <path d="M 16,70 Q 48,60 85,70" data-adry-path></path>
+                      <path d="M 38,52 Q 32,92 54,116 Q 70,135 86,142" data-adry-path></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="adry-section" data-adry-section style="background-color:#27FE12;">
+              <div class="adry-section-inner">
+                <div class="adry-section-grid">
+                  <div class="adry-section-text">
+                    <h2 class="adry-section-title">徹底的にオフラインを表現</h2>
+                    <p class="adry-section-desc">オンラインはさまざまなテクノロジーでありふれて、今や異空間です。私たちがオンラインを楽しめるのはオフラインがあるからです。そして人生はオフラインによって左右します。オフラインを研究しオフラインに最も近いテクノロジーツールを目指します。</p>
+                  </div>
+                  <div class="adry-section-art">
+                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
+                      <path d="M 25,40 Q 70,45 70,70 Q 70,92 45,106 Q 30,116 35,136" data-adry-path></path>
+                      <path d="M 72,24 Q 78,28 74,34" data-adry-path></path>
+                      <path d="M 84,30 Q 90,34 86,40" data-adry-path></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="adry-section adry-text-white" data-adry-section style="background-color:#2D5F4F;">
+              <div class="adry-section-inner">
+                <div class="adry-section-grid">
+                  <div class="adry-section-text">
+                    <h2 class="adry-section-title">新たな面白さを追求</h2>
+                    <p class="adry-section-desc">真面目に面白さを追求します。コンテンツが大量なこの時代。次から次へと興味が移行します。その中でAdryは変わらない面白さや楽しさは何かを追求しアプリケーションに反映します。面白さは欠かせません。</p>
+                  </div>
+                  <div class="adry-section-art">
+                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
+                      <path d="M 55,28 Q 35,70 46,104 Q 54,132 70,140 Q 84,146 88,136" data-adry-path></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="adry-section adry-text-white" data-adry-section style="background-color:#3A7D5C;">
+              <div class="adry-section-inner">
+                <div class="adry-section-grid">
+                  <div class="adry-section-text">
+                    <h2 class="adry-section-title">見る快楽から創造の生きがいに</h2>
+                    <p class="adry-section-desc">多くの時間をSNSに使い、多くの時間を動画コンテンツに費やす生活も悪くないですが、作る楽しさも知ってほしいのが我々の願いでもあります。アプリケーションの中で何かを作ってほしいというわけではありませんが、オフラインでアウトプットできるように、新たな選択肢として"アウトプット"を選択できるようにアプローチします。</p>
+                  </div>
+                  <div class="adry-section-art">
+                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
+                      <path d="M 35,35 Q 25,80 40,135" data-adry-path></path>
+                      <path d="M 70,35 Q 78,85 68,140" data-adry-path></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="adry-section" data-adry-section style="background-color:#B5FF3A;">
+              <div class="adry-section-inner">
+                <div class="adry-section-grid">
+                  <div class="adry-section-text">
+                    <h2 class="adry-section-title">あなた。</h2>
+                    <p class="adry-section-desc">Adryで最も大切なのはあなた自身です。あなたの感性や感覚、あなたの考えです。あなた自身がより良い生活を送れるツールを目指します。</p>
+                  </div>
+                  <div class="adry-section-art">
+                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
+                      <path d="M 40,40 Q 70,30 82,50 Q 92,68 78,85 Q 68,98 58,102 Q 50,106 50,118" data-adry-path></path>
+                      <path d="M 50,134 m -4,0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0" data-adry-path></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="adry-section adry-section-final" data-adry-section style="background-color:#1F3A2E;">
+              <div class="adry-section-inner">
+                <div class="adry-final-card">
+                  <div class="adry-final-phone">
+                    <img src="assets/adry/kjnjk.png" alt="Adryアプリ画面">
+                  </div>
+                  <div class="adry-final-content">
+                    <p class="adry-final-headline">アプリをインストールして<br>もっと見る</p>
+                    <a class="adry-store-button" href="https://apps.apple.com/jp/app/adry/id1618734040" target="_blank" rel="noreferrer">
+                      <span class="adry-store-icon">
+                        <img src="assets/icons/appstore.svg" alt="App Store">
+                      </span>
+                      <span>App Storeを開く</span>
+                    </a>
+                    <div class="adry-qr-block">
+                      <img class="adry-qr-image" src="assets/adry/qrcode.png" alt="AdryアプリのQRコード">
+                      <div class="adry-qr-text">
+                        <p class="adry-qr-title">QRコードでAdryをインストール</p>
+                        <p class="adry-qr-desc">Adryは現在サービスとしてiOSアプリのみご使用いただけます。Adryをご利用になられる場合はApp Storeからインストールをお願いします。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
       `,
@@ -125,8 +289,191 @@
       `,
     };
 
+    // 🎞️ ヒーロースライダー制御
+    let heroSliderTimer = null;
+
+    function setupHeroSlider() {
+      const slider = document.querySelector('[data-hero-slider]');
+      if (!slider) return;
+
+      const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+      if (slides.length === 0) return;
+
+      let currentIndex = 0;
+
+      const showSlide = (index) => {
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+      };
+
+      showSlide(currentIndex);
+
+      if (heroSliderTimer) {
+        clearInterval(heroSliderTimer);
+      }
+
+      heroSliderTimer = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }, 5200);
+    }
+
+    function stopHeroSlider() {
+      if (!heroSliderTimer) return;
+      clearInterval(heroSliderTimer);
+      heroSliderTimer = null;
+    }
+
+    // 🧭 Adryページ制御
+    let adryAutoScrollTimer = null;
+    let adryResumeTimer = null;
+    let adryCleanup = null;
+
+    function setupAdryLineAnimation(container) {
+      const paths = Array.from(container.querySelectorAll('[data-adry-path]'));
+      if (paths.length === 0) return () => {};
+
+      paths.forEach((path) => {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = `${length}`;
+        path.style.strokeDashoffset = `${length}`;
+      });
+
+      if (!('IntersectionObserver' in window)) {
+        paths.forEach((path) => path.classList.add('is-drawing'));
+        return () => {};
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-drawing');
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      paths.forEach((path) => observer.observe(path));
+
+      return () => observer.disconnect();
+    }
+
+    function setupAdryPage() {
+      const container = document.querySelector('[data-adry-scroll]');
+      if (!container) return;
+
+      const sections = Array.from(container.querySelectorAll('[data-adry-section]'));
+      if (sections.length === 0) return;
+
+      let currentIndex = 0;
+      const lineCleanup = setupAdryLineAnimation(container);
+
+      const scrollToIndex = (index) => {
+        const target = sections[index];
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth' });
+        currentIndex = index;
+      };
+
+      const scheduleResume = () => {
+        if (adryResumeTimer) {
+          clearTimeout(adryResumeTimer);
+        }
+        adryResumeTimer = setTimeout(() => {
+          scheduleAutoScroll();
+        }, 1000);
+      };
+
+      const stopAutoScroll = () => {
+        if (adryAutoScrollTimer) {
+          clearTimeout(adryAutoScrollTimer);
+          adryAutoScrollTimer = null;
+        }
+      };
+
+      const scheduleAutoScroll = () => {
+        stopAutoScroll();
+        const isFinal = currentIndex === sections.length - 1;
+        const delay = isFinal ? 15000 : 5000;
+        adryAutoScrollTimer = setTimeout(() => {
+          const nextIndex = (currentIndex + 1) % sections.length;
+          scrollToIndex(nextIndex);
+          scheduleAutoScroll();
+        }, delay);
+      };
+
+      const handleScroll = () => {
+        stopAutoScroll();
+        currentIndex = Math.round(container.scrollTop / container.clientHeight);
+        scheduleResume();
+      };
+
+      let wheelLock = false;
+      let wheelLockTimer = null;
+
+      const handleWheel = (event) => {
+        if (wheelLock) return;
+        wheelLock = true;
+        stopAutoScroll();
+        const direction = event.deltaY > 0 ? 1 : -1;
+        const nextIndex = Math.min(
+          sections.length - 1,
+          Math.max(0, currentIndex + direction),
+        );
+        if (nextIndex !== currentIndex) {
+          scrollToIndex(nextIndex);
+        }
+        scheduleResume();
+        event.preventDefault();
+        wheelLockTimer = setTimeout(() => {
+          wheelLock = false;
+        }, 700);
+      };
+
+      container.addEventListener('scroll', handleScroll, { passive: true });
+      container.addEventListener('wheel', handleWheel, { passive: false });
+      scheduleAutoScroll();
+
+      adryCleanup = () => {
+        stopAutoScroll();
+        if (adryResumeTimer) {
+          clearTimeout(adryResumeTimer);
+          adryResumeTimer = null;
+        }
+        if (wheelLockTimer) {
+          clearTimeout(wheelLockTimer);
+          wheelLockTimer = null;
+        }
+        container.removeEventListener('scroll', handleScroll);
+        container.removeEventListener('wheel', handleWheel);
+        lineCleanup();
+      };
+    }
+
+    function stopAdryPage() {
+      if (!adryCleanup) return;
+      adryCleanup();
+      adryCleanup = null;
+    }
+
+    function resolvePageKey(pathname) {
+      if (pathname === '/adry' || pathname === '/adry/') return 'adry';
+      return 'home';
+    }
+
+    function updateUrlForKey(key) {
+      if (key === 'adry') {
+        history.pushState({}, '', '/adry');
+        return;
+      }
+      history.pushState({}, '', '/');
+    }
+
     // 🌟 ページ遷移関数
-    function navigateTo(key) {
+    function navigateTo(key, options = { updateUrl: true }) {
+      stopHeroSlider();
+      stopAdryPage();
       const content = document.getElementById('content');
       document.querySelectorAll('nav button, nav a')
         .forEach(el => el.removeAttribute('aria-current'));
@@ -135,6 +482,12 @@
       const active = document.getElementById(`nav-${key}`);
       if (active) active.setAttribute('aria-current', 'page');
 
+      document.body.classList.toggle('adry-mode', key === 'adry');
+
+      if (options.updateUrl) {
+        updateUrlForKey(key);
+      }
+
       // ✨ フェード効果＋描画
       content.classList.add('fade-enter');
       setTimeout(() => {
@@ -142,6 +495,8 @@
         content.classList.remove('fade-enter');
         content.classList.add('fade-enter-active');
         setTimeout(() => content.classList.remove('fade-enter-active'), 400);
+        setupHeroSlider();
+        setupAdryPage();
       }, 150);
     }
 
@@ -155,7 +510,16 @@
     }
 
     // ✅ 初期表示
-    window.addEventListener('DOMContentLoaded', () => navigateTo('home'));
+    window.addEventListener('DOMContentLoaded', () => {
+      const initialKey = resolvePageKey(window.location.pathname);
+      navigateTo(initialKey, { updateUrl: false });
+    });
+
+    // 🔁 ブラウザ戻る/進む対応
+    window.addEventListener('popstate', () => {
+      const nextKey = resolvePageKey(window.location.pathname);
+      navigateTo(nextKey, { updateUrl: false });
+    });
   </script>
 </body>
 
