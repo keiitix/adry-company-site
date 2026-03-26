@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ａｕｄｒｅｙ合同会社</title>
+  <meta name="theme-color" content="#17181C" id="theme-color">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -457,14 +458,26 @@
       adryCleanup = null;
     }
 
-    function resolvePageKey(pathname) {
+    function resolvePageKey() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('page') === 'adry') return 'adry';
+      const pathname = window.location.pathname;
       if (pathname === '/adry' || pathname === '/adry/') return 'adry';
       return 'home';
     }
 
+    const THEME_COLOR_DEFAULT = '#17181C';
+    const THEME_COLOR_ADRY = '#1B4D3E';
+
+    function setThemeColor(color) {
+      const meta = document.getElementById('theme-color');
+      if (!meta) return;
+      meta.setAttribute('content', color);
+    }
+
     function updateUrlForKey(key) {
       if (key === 'adry') {
-        history.pushState({}, '', '/adry');
+        history.pushState({}, '', '/?page=adry');
         return;
       }
       history.pushState({}, '', '/');
@@ -483,6 +496,7 @@
       if (active) active.setAttribute('aria-current', 'page');
 
       document.body.classList.toggle('adry-mode', key === 'adry');
+      setThemeColor(key === 'adry' ? THEME_COLOR_ADRY : THEME_COLOR_DEFAULT);
 
       if (options.updateUrl) {
         updateUrlForKey(key);
@@ -511,13 +525,13 @@
 
     // ✅ 初期表示
     window.addEventListener('DOMContentLoaded', () => {
-      const initialKey = resolvePageKey(window.location.pathname);
+      const initialKey = resolvePageKey();
       navigateTo(initialKey, { updateUrl: false });
     });
 
     // 🔁 ブラウザ戻る/進む対応
     window.addEventListener('popstate', () => {
-      const nextKey = resolvePageKey(window.location.pathname);
+      const nextKey = resolvePageKey();
       navigateTo(nextKey, { updateUrl: false });
     });
   </script>
