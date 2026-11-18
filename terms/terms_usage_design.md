@@ -22,3 +22,8 @@
 ## 2026-10-29 📜 機能調査に基づく利用規約の更新
 
 実装担当AI: Codex / 日付時間: 2026-10-29 JST / 変更箇所: 同階層の今回対象ファイル / 変更理由: 現行表示名、Tokyo Twilight、memo in memoと規約の差を解消 / 変更内容: 日英韓の一般規約全12条を維持して本文・改定日・同意版を2026-10-29へ同期。Post/Account/Board/Adry IDと旧称の対応、夜間の表示制限と活動通知保留、語句・文脈の外部AI処理と公開/非公開メモを明記 / 補足: 横断調査・検証・反映・未検証事項の正本は `/Users/kent/Adry_Project/adry-web-app/app/terms/terms_usage_design.md` の同日節。既存の再同意・保存/公開権限・基盤モデル非学習方針・料金/賠償条件は不変。本文I/O 0、旧版初回は既存最大1 Read、本人同意は既存merge 1 Write。listener・Functions/Rules/Index変更・バックフィル・Python常駐再起動不要。
+
+
+## 2026-11-18 Worksの利用規約・三掲載面同期
+
+実装担当AI: Codex / 日付時間: 2026-11-18 15:50 JST / 変更箇所: terms/index.html・../update_legal.js termsHtml / 変更理由: 会社原稿の旧説明とアプリ/Webの差を解消 / 変更内容: 現行日本語12条を同期、Works条項追加、改定日11/18。生成元を一時ディレクトリで実行してtermsだけ反映 / 補足: privacy/data-ai/guidelinesは再生成しない。会社規約は日本語。正本 /Users/kent/Adry_Project/adry-web-app/app/terms/terms_usage_design.md。
