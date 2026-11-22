@@ -276,7 +276,8 @@ strong, b {
 .hero-inner {
   position: relative;
   width: 100%;
-  padding: 72px 0 80px;
+  padding-top: 72px;
+  padding-bottom: 80px;
 }
 
 .hero-slider {
@@ -973,7 +974,8 @@ textarea:focus {
 
 @media (max-width: 640px) {
   .hero-inner {
-    padding: 48px 0 60px;
+    padding-top: 48px;
+    padding-bottom: 60px;
   }
 
   .hero-slides {
