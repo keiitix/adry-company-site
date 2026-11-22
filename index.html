@@ -1,3 +1,4 @@
+<!-- 📘 使用設計: /Users/kent/Adry_Project/adry-company-site/commerce/commerce_usage_design.md -->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,12 +8,10 @@
   <title>Ａｕｄｒｅｙ合同会社</title>
   <meta name="theme-color" content="#17181C" id="theme-color">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
   <link rel="icon" href="/favicon.ico">
   <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
-  <meta property="og:image" content="ogp.png">
+  <meta property="og:image" content="assets/ogp.png">
   <meta property="og:url" content="https://adry.jp/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,65 +24,71 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo-link" href="/">
-        <img src="assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+        <span class="chop-logo" aria-label="Adry"></span>
       </a>
       <nav class="site-nav">
-        <button class="nav-link" id="nav-home" onclick="navigateTo('home')">ホーム</button>
-        <button class="nav-link" id="nav-adry" onclick="navigateTo('adry')">Adry</button>
-        <a class="nav-link" href="/terms/">利用規約</a>
-        <a class="nav-link" href="/guidelines/">ガイドライン</a>
-        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="nav-link" href="/data-ai/">データ・AI</a>
-        <a class="nav-link" href="/commerce/">特定商取引法に基づく表記</a>
-        <a class="nav-link" href="/support/">問い合わせ</a>
+        <button class="nav-link" id="nav-home" onclick="navigateTo('home')" data-i18n="navHome">ホーム</button>
+        <button class="nav-link" id="nav-adry" onclick="navigateTo('adry')" data-i18n="navAdry">Adry</button>
+        <a class="nav-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="nav-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="nav-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="nav-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+        <a class="nav-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </nav>
     </div>
   </header>
 
-
-
   <main id="content"></main>
-
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-logo" href="/">
-        <img src="assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
-      </a>
-      <div class="footer-links">
-        <a class="footer-link" href="/terms/">利用規約</a>
-        <a class="footer-link" href="/guidelines/">ガイドライン</a>
-        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="footer-link" href="/data-ai/">データ・AI</a>
-        <a class="footer-link" href="/support/">問い合わせ</a>
-        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      <div class="footer-top">
+        <a class="footer-logo" href="/">
+          <span class="chop-logo" aria-label="Adry"></span>
+        </a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </div>
-      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="footer-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="footer-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="footer-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <a class="footer-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
     </div>
   </footer>
 
-
+  <script src="assets/js/i18n.js"></script>
   <script>
     // 🚀 ページ定義
     const pages = {
       home: `
         <section class="hero-home">
           <div class="hero-bg"></div>
-          <div class="hero-pattern"></div>
-          <div class="hero-orb one"></div>
-          <div class="hero-orb two"></div>
           <div class="container hero-inner">
             <div class="hero-slider fade-in" data-hero-slider>
               <div class="hero-slides">
                 <article class="hero-slide is-active no-media">
                   <div class="hero-content">
-                    <h1 class="hero-title">強く、楽しく</h1>
-                    <p class="hero-subtitle">Adryは人生を通して、夢中を提供します</p>
+                    <h1 class="hero-title" data-i18n="heroTitle1">強く、楽しく</h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle1">Adryは人生を通して、夢中を提供します</p>
                   </div>
                 </article>
                 <article class="hero-slide has-media">
                   <div class="hero-content">
-                    <h2 class="hero-slide-title">穏やかに興味にふれる</h2>
+                    <h2 class="hero-slide-title" data-i18n="heroSlide2">穏やかに興味にふれる</h2>
                   </div>
                   <div class="hero-media">
                     <img src="assets/app/1.png" alt="穏やかに興味にふれる" loading="lazy">
@@ -91,7 +96,7 @@
                 </article>
                 <article class="hero-slide has-media">
                   <div class="hero-content">
-                    <h2 class="hero-slide-title">他の興味も探せる</h2>
+                    <h2 class="hero-slide-title" data-i18n="heroSlide3">他の興味も探せる</h2>
                   </div>
                   <div class="hero-media">
                     <img src="assets/app/2.png" alt="他の興味も探せる" loading="lazy">
@@ -99,26 +104,10 @@
                 </article>
                 <article class="hero-slide has-media">
                   <div class="hero-content">
-                    <h2 class="hero-slide-title">探した興味が<br>まとまって見える</h2>
+                    <h2 class="hero-slide-title" data-i18n="heroSlide4">興味が共有される</h2>
                   </div>
                   <div class="hero-media">
-                    <img src="assets/app/3.png" alt="探した興味がまとまって見える" loading="lazy">
-                  </div>
-                </article>
-                <article class="hero-slide has-media">
-                  <div class="hero-content">
-                    <h2 class="hero-slide-title">興味を導く手助け</h2>
-                  </div>
-                  <div class="hero-media">
-                    <img src="assets/app/4.png" alt="興味を導く手助け" loading="lazy">
-                  </div>
-                </article>
-                <article class="hero-slide has-media">
-                  <div class="hero-content">
-                    <h2 class="hero-slide-title">今の興味で見えてくる自分はどんな人？</h2>
-                  </div>
-                  <div class="hero-media">
-                    <img src="assets/app/5.png" alt="今の興味で見えてくる自分はどんな人？" loading="lazy">
+                    <img src="assets/app/3.png" alt="興味が共有される" loading="lazy">
                   </div>
                 </article>
               </div>
@@ -127,17 +116,19 @@
         </section>
         <section class="section">
           <div class="container">
-            <h2 class="section-title">会社概要</h2>
+            <h2 class="section-title" data-i18n="companyTitle">会社概要</h2>
             <div class="company-card fade-in">
               <div class="company-grid">
-                <div class="company-label">社名</div>
-                <div class="company-value">Ａｕｄｒｅｙ合同会社</div>
-                <div class="company-label">設立</div>
-                <div class="company-value">2025年</div>
-                <div class="company-label">所在地</div>
-                <div class="company-value">大阪府吹田市山手町3−9−13-207</div>
-                <div class="company-label">代表</div>
-                <div class="company-value">中村研斗</div>
+                <div class="company-label" data-i18n="companyNameLabel">社名</div>
+                <div class="company-value" data-i18n="companyNameValue">Ａｕｄｒｅｙ合同会社</div>
+                <div class="company-label" data-i18n="companyLocationLabel">所在地</div>
+                <div class="company-value" data-i18n="companyLocationValue">大阪府吹田市山手町3−9−13-207</div>
+                <div class="company-label" data-i18n="companyFoundedLabel">設立</div>
+                <div class="company-value" data-i18n="companyFoundedValue">2024年4月17日</div>
+                <div class="company-label" data-i18n="companyRepLabel">代表</div>
+                <div class="company-value" data-i18n="companyRepValue">中村研斗</div>
+                <div class="company-label" data-i18n="companyBizLabel">事業内容</div>
+                <div class="company-value" data-i18n="companyBizValue">モバイルアプリケーションの企画・開発・運営</div>
               </div>
             </div>
           </div>
@@ -147,11 +138,11 @@
         <section class="adry-page">
           <a class="adry-home-button" href="/" onclick="navigateTo('home'); return false;" aria-label="ホームへ戻る">
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" />
             </svg>
           </a>
           <div class="adry-scroll" data-adry-scroll>
-            <section class="adry-section adry-text-white" data-adry-section style="background-color:#1B4D3E;">
+            <section class="adry-section adry-text-white" data-adry-section style="background-color:#16171B;">
               <div class="adry-section-inner">
                 <div class="adry-section-grid">
                   <div class="adry-section-text">
@@ -168,7 +159,7 @@
                 </div>
               </div>
             </section>
-            <section class="adry-section" data-adry-section style="background-color:#27FE12;">
+            <section class="adry-section" data-adry-section style="background-color:#1E1F24;">
               <div class="adry-section-inner">
                 <div class="adry-section-grid">
                   <div class="adry-section-text">
@@ -178,277 +169,85 @@
                   <div class="adry-section-art">
                     <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
                       <path d="M 25,40 Q 70,45 70,70 Q 70,92 45,106 Q 30,116 35,136" data-adry-path></path>
-                      <path d="M 72,24 Q 78,28 74,34" data-adry-path></path>
-                      <path d="M 84,30 Q 90,34 86,40" data-adry-path></path>
                     </svg>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="adry-section adry-text-white" data-adry-section style="background-color:#2D5F4F;">
-              <div class="adry-section-inner">
-                <div class="adry-section-grid">
-                  <div class="adry-section-text">
-                    <h2 class="adry-section-title">新たな面白さを追求</h2>
-                    <p class="adry-section-desc">真面目に面白さを追求します。コンテンツが大量なこの時代。次から次へと興味が移行します。その中でAdryは変わらない面白さや楽しさは何かを追求しアプリケーションに反映します。面白さは欠かせません。</p>
-                  </div>
-                  <div class="adry-section-art">
-                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
-                      <path d="M 55,28 Q 35,70 46,104 Q 54,132 70,140 Q 84,146 88,136" data-adry-path></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="adry-section adry-text-white" data-adry-section style="background-color:#3A7D5C;">
-              <div class="adry-section-inner">
-                <div class="adry-section-grid">
-                  <div class="adry-section-text">
-                    <h2 class="adry-section-title">見る快楽から創造の生きがいに</h2>
-                    <p class="adry-section-desc">多くの時間をSNSに使い、多くの時間を動画コンテンツに費やす生活も悪くないですが、作る楽しさも知ってほしいのが我々の願いでもあります。アプリケーションの中で何かを作ってほしいというわけではありませんが、オフラインでアウトプットできるように、新たな選択肢として"アウトプット"を選択できるようにアプローチします。</p>
-                  </div>
-                  <div class="adry-section-art">
-                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
-                      <path d="M 35,35 Q 25,80 40,135" data-adry-path></path>
-                      <path d="M 70,35 Q 78,85 68,140" data-adry-path></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="adry-section" data-adry-section style="background-color:#B5FF3A;">
-              <div class="adry-section-inner">
-                <div class="adry-section-grid">
-                  <div class="adry-section-text">
-                    <h2 class="adry-section-title">あなた。</h2>
-                    <p class="adry-section-desc">Adryで最も大切なのはあなた自身です。あなたの感性や感覚、あなたの考えです。あなた自身がより良い生活を送れるツールを目指します。</p>
-                  </div>
-                  <div class="adry-section-art">
-                    <svg viewBox="0 0 100 160" class="adry-line" aria-hidden="true">
-                      <path d="M 40,40 Q 70,30 82,50 Q 92,68 78,85 Q 68,98 58,102 Q 50,106 50,118" data-adry-path></path>
-                      <path d="M 50,134 m -4,0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0" data-adry-path></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="adry-section adry-section-final" data-adry-section style="background-color:#1F3A2E;">
+            <section class="adry-section adry-text-white" data-adry-section style="background-color:#111215;">
               <div class="adry-section-inner">
                 <div class="adry-final-card">
                   <div class="adry-final-phone">
-                    <img src="assets/adry/kjnjk.png" alt="Adryアプリ画面">
+                    <img src="assets/adry/final-phone.png" alt="Adryアプリ画面" loading="lazy">
                   </div>
                   <div class="adry-final-content">
-                    <p class="adry-final-headline">アプリをインストールして<br>もっと見る</p>
-                    <a class="adry-store-button" href="https://apps.apple.com/jp/app/adry/id1618734040" target="_blank" rel="noreferrer">
-                      <span class="adry-store-icon">
-                        <img src="assets/icons/appstore.svg" alt="App Store">
-                      </span>
-                      <span>App Storeを開く</span>
+                    <h3 class="adry-final-headline">App Store で配信中</h3>
+                    <a class="adry-store-button" href="https://apps.apple.com/app/adry/id6739618192" target="_blank" rel="noopener noreferrer">
+                      Download on the App Store
                     </a>
-                    <div class="adry-qr-block">
-                      <img class="adry-qr-image" src="assets/adry/qrcode.png" alt="AdryアプリのQRコード">
-                      <div class="adry-qr-text">
-                        <p class="adry-qr-title">QRコードでAdryをインストール</p>
-                        <p class="adry-qr-desc">Adryは現在サービスとしてiOSアプリのみご使用いただけます。Adryをご利用になられる場合はApp Storeからインストールをお願いします。</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </section>
           </div>
         </section>
-      `,
-      contact: `
-        <section class="section">
-          <div class="container">
-            <h2 class="section-title">お問い合わせ</h2>
-            <div class="form-card">
-              <form onsubmit="handleSubmit(event)" class="form-grid">
-                <div class="form-field">
-                  <label for="name">お名前</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-
-                <div class="form-field">
-                  <label for="email">メールアドレス</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-
-                <div class="form-field">
-                  <label for="msg">お問い合わせ内容</label>
-                  <textarea id="msg" name="msg" rows="4" required></textarea>
-                </div>
-
-                <div class="btn-row">
-                  <button class="btn-primary" type="submit">送信</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      `,
+      `
     };
 
-    // 🎞️ ヒーロースライダー制御
-    let heroSliderTimer = null;
+    let heroTimer = null;
+    let adryCleanup = null;
 
     function setupHeroSlider() {
       const slider = document.querySelector('[data-hero-slider]');
       if (!slider) return;
-
       const slides = Array.from(slider.querySelectorAll('.hero-slide'));
-      if (slides.length === 0) return;
-
+      if (!slides.length) return;
       let currentIndex = 0;
-
-      const showSlide = (index) => {
-        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
-      };
-
-      showSlide(currentIndex);
-
-      if (heroSliderTimer) {
-        clearInterval(heroSliderTimer);
-      }
-
-      heroSliderTimer = setInterval(() => {
+      function showNextSlide() {
+        slides[currentIndex].classList.remove('is-active');
         currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      }, 5200);
+        slides[currentIndex].classList.add('is-active');
+      }
+      heroTimer = window.setInterval(showNextSlide, 4500);
     }
 
     function stopHeroSlider() {
-      if (!heroSliderTimer) return;
-      clearInterval(heroSliderTimer);
-      heroSliderTimer = null;
-    }
-
-    // 🧭 Adryページ制御
-    let adryAutoScrollTimer = null;
-    let adryResumeTimer = null;
-    let adryCleanup = null;
-
-    function setupAdryLineAnimation(container) {
-      const paths = Array.from(container.querySelectorAll('[data-adry-path]'));
-      if (paths.length === 0) return () => {};
-
-      paths.forEach((path) => {
-        const length = path.getTotalLength();
-        path.style.strokeDasharray = `${length}`;
-        path.style.strokeDashoffset = `${length}`;
-      });
-
-      if (!('IntersectionObserver' in window)) {
-        paths.forEach((path) => path.classList.add('is-drawing'));
-        return () => {};
+      if (heroTimer) {
+        clearInterval(heroTimer);
+        heroTimer = null;
       }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-drawing');
-            observer.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.6 }
-      );
-
-      paths.forEach((path) => observer.observe(path));
-
-      return () => observer.disconnect();
     }
 
     function setupAdryPage() {
       const container = document.querySelector('[data-adry-scroll]');
       if (!container) return;
-
       const sections = Array.from(container.querySelectorAll('[data-adry-section]'));
-      if (sections.length === 0) return;
+      if (!sections.length) return;
+      let isScrolling = false;
 
-      let currentIndex = 0;
-      const lineCleanup = setupAdryLineAnimation(container);
+      function lineCleanup() {
+        sections.forEach(s => {
+          s.querySelectorAll('[data-adry-path]').forEach(p => p.classList.remove('is-drawing'));
+        });
+      }
 
-      const scrollToIndex = (index) => {
-        const target = sections[index];
-        if (!target) return;
-        target.scrollIntoView({ behavior: 'smooth' });
-        currentIndex = index;
-      };
-
-      const scheduleResume = () => {
-        if (adryResumeTimer) {
-          clearTimeout(adryResumeTimer);
-        }
-        adryResumeTimer = setTimeout(() => {
-          scheduleAutoScroll();
-        }, 1000);
-      };
-
-      const stopAutoScroll = () => {
-        if (adryAutoScrollTimer) {
-          clearTimeout(adryAutoScrollTimer);
-          adryAutoScrollTimer = null;
-        }
-      };
-
-      const scheduleAutoScroll = () => {
-        stopAutoScroll();
-        const isFinal = currentIndex === sections.length - 1;
-        const delay = isFinal ? 15000 : 5000;
-        adryAutoScrollTimer = setTimeout(() => {
-          const nextIndex = (currentIndex + 1) % sections.length;
-          scrollToIndex(nextIndex);
-          scheduleAutoScroll();
-        }, delay);
-      };
-
-      const handleScroll = () => {
-        stopAutoScroll();
-        currentIndex = Math.round(container.scrollTop / container.clientHeight);
-        scheduleResume();
-      };
-
-      let wheelLock = false;
-      let wheelLockTimer = null;
-
-      const handleWheel = (event) => {
-        if (wheelLock) return;
-        wheelLock = true;
-        stopAutoScroll();
-        const direction = event.deltaY > 0 ? 1 : -1;
-        const nextIndex = Math.min(
-          sections.length - 1,
-          Math.max(0, currentIndex + direction),
-        );
-        if (nextIndex !== currentIndex) {
-          scrollToIndex(nextIndex);
-        }
-        scheduleResume();
-        event.preventDefault();
-        wheelLockTimer = setTimeout(() => {
-          wheelLock = false;
-        }, 700);
-      };
+      function handleScroll() {
+        if (isScrolling) return;
+        const currentPos = container.scrollTop;
+        const windowHeight = window.innerHeight;
+        const targetIndex = Math.round(currentPos / windowHeight);
+        sections.forEach((sec, idx) => {
+          if (idx === targetIndex) {
+            sec.querySelectorAll('[data-adry-path]').forEach(p => p.classList.add('is-drawing'));
+          } else {
+            sec.querySelectorAll('[data-adry-path]').forEach(p => p.classList.remove('is-drawing'));
+          }
+        });
+      }
 
       container.addEventListener('scroll', handleScroll, { passive: true });
-      container.addEventListener('wheel', handleWheel, { passive: false });
-      scheduleAutoScroll();
-
-      adryCleanup = () => {
-        stopAutoScroll();
-        if (adryResumeTimer) {
-          clearTimeout(adryResumeTimer);
-          adryResumeTimer = null;
-        }
-        if (wheelLockTimer) {
-          clearTimeout(wheelLockTimer);
-          wheelLockTimer = null;
-        }
+      adryCleanup = function () {
         container.removeEventListener('scroll', handleScroll);
-        container.removeEventListener('wheel', handleWheel);
         lineCleanup();
       };
     }
@@ -467,75 +266,48 @@
       return 'home';
     }
 
-    const THEME_COLOR_DEFAULT = '#17181C';
-    const THEME_COLOR_ADRY = '#1B4D3E';
-
-    function setThemeColor(color) {
-      const meta = document.getElementById('theme-color');
-      if (!meta) return;
-      meta.setAttribute('content', color);
-    }
-
-    function updateUrlForKey(key) {
-      if (key === 'adry') {
-        history.pushState({}, '', '/?page=adry');
-        return;
-      }
-      history.pushState({}, '', '/');
-    }
-
-    // 🌟 ページ遷移関数
     function navigateTo(key, options = { updateUrl: true }) {
       stopHeroSlider();
       stopAdryPage();
       const content = document.getElementById('content');
-      document.querySelectorAll('nav button, nav a')
-        .forEach(el => el.removeAttribute('aria-current'));
+      document.querySelectorAll('nav button, nav a').forEach(el => el.removeAttribute('aria-current'));
 
-      // ✅ クリックされたSPA用ボタンにだけ付け直す
       const active = document.getElementById(`nav-${key}`);
       if (active) active.setAttribute('aria-current', 'page');
 
       document.body.classList.toggle('adry-mode', key === 'adry');
-      setThemeColor(key === 'adry' ? THEME_COLOR_ADRY : THEME_COLOR_DEFAULT);
 
       if (options.updateUrl) {
-        updateUrlForKey(key);
+        if (key === 'adry') {
+          history.pushState({}, '', '/?page=adry');
+        } else {
+          history.pushState({}, '', '/');
+        }
       }
 
-      // ✨ フェード効果＋描画
       content.classList.add('fade-enter');
       setTimeout(() => {
         content.innerHTML = pages[key] || pages.home;
         content.classList.remove('fade-enter');
         content.classList.add('fade-enter-active');
-        setTimeout(() => content.classList.remove('fade-enter-active'), 400);
+        setTimeout(() => content.classList.remove('fade-enter-active'), 300);
         setupHeroSlider();
         setupAdryPage();
-      }, 150);
+        if (window.adryI18n) {
+          window.adryI18n.setLanguage(window.adryI18n.getLanguage());
+        }
+      }, 100);
     }
 
-
-    // 📧 フォーム送信 (ダミー)
-    function handleSubmit(e) {
-      e.preventDefault();
-      alert('お問い合わせありがとうございます！🎉\n担当者より折り返しご連絡いたします。');
-      console.log('✅ お問い合わせフォーム送信完了');
-      e.target.reset();
-    }
-
-    // ✅ 初期表示
     window.addEventListener('DOMContentLoaded', () => {
       const initialKey = resolvePageKey();
       navigateTo(initialKey, { updateUrl: false });
     });
 
-    // 🔁 ブラウザ戻る/進む対応
     window.addEventListener('popstate', () => {
       const nextKey = resolvePageKey();
       navigateTo(nextKey, { updateUrl: false });
     });
   </script>
 </body>
-
 </html>

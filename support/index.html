@@ -1,18 +1,17 @@
+<!-- 📘 使用設計: /Users/kent/Adry_Project/adry-company-site/commerce/commerce_usage_design.md -->
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>お問い合わせ | Ａｕｄｒｅｙ合同会社</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>問い合わせ | Ａｕｄｒｅｙ合同会社</title>
   
   <link rel="icon" href="/favicon.ico">
-  <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
-  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
-  <meta property="og:image" content="ogp.png">
-  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:title" content="問い合わせ | Ａｕｄｒｅｙ合同会社">
+  <meta property="og:description" content="問い合わせ">
+  <meta property="og:image" content="../assets/ogp.png">
+  <meta property="og:url" content="https://adry.jp/support/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -23,31 +22,33 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo-link" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+        <span class="chop-logo" aria-label="Adry"></span>
       </a>
       <nav class="site-nav">
-        <a class="nav-link" href="/">ホーム</a>
-        <a class="nav-link" href="/?page=adry">Adry</a>
-        <a class="nav-link" href="/terms/">利用規約</a>
-        <a class="nav-link" href="/guidelines/">ガイドライン</a>
-        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="nav-link" href="/data-ai/">データ・AI</a>
-        <a class="nav-link" href="/commerce/">特定商取引法に基づく表記</a>
-        <a class="nav-link" href="/support/" aria-current="page">問い合わせ</a>
+        <a class="nav-link" href="/" data-i18n="navHome">ホーム</a>
+        <a class="nav-link" href="/?page=adry" data-i18n="navAdry">Adry</a>
+        <a class="nav-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="nav-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="nav-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="nav-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+        <a class="nav-link" href="/support/" aria-current="page" data-i18n="navSupport">問い合わせ</a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <main class="page-main">
     <div class="fade-in">
-      <h1 class="page-title">お問い合わせ</h1>
+      <h1 class="page-title" data-i18n="supportPageTitle">問い合わせ</h1>
       <div class="page-underline"></div>
-      <p class="page-lead">サービスに関するご質問、ご相談、取材・協業のご連絡など、<br>お気軽にお送りください。</p>
+      <p class="page-lead" data-i18n="supportPageLead">サービスに関するご質問やご要望は、下記フォームよりお送りください。</p>
 
       <div class="form-card">
-        <h2 class="section-title">フォームからお問い合わせ</h2>
-        <p class="form-note">内容によってはお時間をいただく場合があります。</p>
-
         <form action="https://api.web3forms.com/submit" method="POST" class="form-grid">
           <input type="hidden" name="access_key" value="8f8589b5-7094-4da8-9a25-38747f99ac3d" />
           <input type="hidden" name="subject" value="【Adry】お問い合わせが届きました" />
@@ -55,33 +56,33 @@
           <input type="hidden" name="redirect" value="https://adry.jp/support/thanks">
 
           <div class="form-field">
-            <label for="name">お名前</label>
-            <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
+            <label for="name" data-i18n="supportNameLabel">お名前</label>
+            <input type="text" id="name" name="name" required placeholder="例：山田 太郎" data-i18n-placeholder="supportNamePlaceholder" />
           </div>
 
           <div class="form-field">
-            <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" required placeholder="例：example@gmail.com" />
+            <label for="email" data-i18n="supportEmailLabel">メールアドレス</label>
+            <input type="email" id="email" name="email" required placeholder="例：name@example.com" data-i18n-placeholder="supportEmailPlaceholder" />
           </div>
 
           <div class="form-field">
-            <label for="type">お問い合わせ種別</label>
+            <label for="type" data-i18n="supportCategoryLabel">お問い合わせ項目</label>
             <select id="type" name="type" required>
-              <option value="">選択してください</option>
-              <option value="general">サービス全般について</option>
-              <option value="trouble">アプリの不具合・トラブル</option>
-              <option value="business">取材・ビジネス/協業のご相談</option>
-              <option value="other">その他</option>
+              <option value="" data-i18n="supportCategoryOptionDefault">選択してください</option>
+              <option value="general" data-i18n="supportCategoryOption1">サービスについて</option>
+              <option value="trouble" data-i18n="supportCategoryOption2">不具合・障害の報告</option>
+              <option value="business" data-i18n="supportCategoryOption3">ご意見・ご要望</option>
+              <option value="other" data-i18n="supportCategoryOption4">取材・協業・その他</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="message">お問い合わせ内容</label>
-            <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を入力してください"></textarea>
+            <label for="message" data-i18n="supportContentLabel">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容を詳しくご記入ください" data-i18n-placeholder="supportContentPlaceholder"></textarea>
           </div>
 
           <div class="btn-row">
-            <button class="btn-primary" type="submit">送信する</button>
+            <button class="btn-primary" type="submit" data-i18n="supportSubmitBtn">送信する</button>
           </div>
         </form>
       </div>
@@ -90,20 +91,28 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-logo" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
-      </a>
-      <div class="footer-links">
-        <a class="footer-link" href="/terms/">利用規約</a>
-        <a class="footer-link" href="/guidelines/">ガイドライン</a>
-        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="footer-link" href="/data-ai/">データ・AI</a>
-        <a class="footer-link" href="/support/">問い合わせ</a>
-        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      <div class="footer-top">
+        <a class="footer-logo" href="/">
+          <span class="chop-logo" aria-label="Adry"></span>
+        </a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </div>
-      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="footer-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="footer-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="footer-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <a class="footer-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
     </div>
   </footer>
-</body>
 
+  <script src="../assets/js/i18n.js"></script>
+</body>
 </html>

@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>データ・AI | Ａｕｄｒｅｙ合同会社</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <link rel="icon" href="/favicon.ico">
   <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
   <meta property="og:description" content="感情をつなぐ、テクノロジー。">
-  <meta property="og:image" content="ogp.png">
+  <meta property="og:image" content="../assets/ogp.png">
   <meta property="og:url" content="https://adry.jp/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,22 +16,26 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo-link" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+        <span class="chop-logo" aria-label="Adry"></span>
       </a>
       <nav class="site-nav">
-        <a class="nav-link" href="/">ホーム</a>
-        <a class="nav-link" href="/?page=adry">Adry</a>
-        <a class="nav-link" href="/terms/">利用規約</a>
-        <a class="nav-link" href="/guidelines/">ガイドライン</a>
-        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="nav-link" href="/data-ai/" aria-current="page">データ・AI</a>
-        <a class="nav-link" href="/commerce/">特定商取引法に基づく表記</a>
-        <a class="nav-link" href="/support/">問い合わせ</a>
+        <a class="nav-link" href="/" data-i18n="navHome">ホーム</a>
+        <a class="nav-link" href="/?page=adry" data-i18n="navAdry">Adry</a>
+        <a class="nav-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="nav-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="nav-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/" aria-current="page" data-i18n="navDataAi">データ・AI</a>
+        <a class="nav-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+        <a class="nav-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -60,19 +62,28 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-logo" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
-      </a>
-      <div class="footer-links">
-        <a class="footer-link" href="/terms/">利用規約</a>
-        <a class="footer-link" href="/guidelines/">ガイドライン</a>
-        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="footer-link" href="/data-ai/">データ・AI</a>
-        <a class="footer-link" href="/support/">問い合わせ</a>
-        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      <div class="footer-top">
+        <a class="footer-logo" href="/">
+          <span class="chop-logo" aria-label="Adry"></span>
+        </a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </div>
-      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="footer-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="footer-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="footer-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <a class="footer-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
     </div>
   </footer>
+
+  <script src="../assets/js/i18n.js"></script>
 </body>
 </html>

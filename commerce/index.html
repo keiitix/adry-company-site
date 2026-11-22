@@ -1,3 +1,4 @@
+<!-- 📘 使用設計: /Users/kent/Adry_Project/adry-company-site/commerce/commerce_usage_design.md -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,13 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>特定商取引法に基づく表記 | Ａｕｄｒｅｙ合同会社</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <link rel="icon" href="/favicon.ico">
-  <meta property="og:title" content="Ａｕｄｒｅｙ合同会社">
-  <meta property="og:description" content="感情をつなぐ、テクノロジー。">
-  <meta property="og:image" content="ogp.png">
-  <meta property="og:url" content="https://adry.jp/">
+  <meta property="og:title" content="特定商取引法に基づく表記 | Ａｕｄｒｅｙ合同会社">
+  <meta property="og:description" content="特定商取引法に基づく表記">
+  <meta property="og:image" content="../assets/ogp.png">
+  <meta property="og:url" content="https://adry.jp/commerce/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -22,87 +21,92 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo-link" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
+        <span class="chop-logo" aria-label="Adry"></span>
       </a>
       <nav class="site-nav">
-        <a class="nav-link" href="/">ホーム</a>
-        <a class="nav-link" href="/?page=adry">Adry</a>
-        <a class="nav-link" href="/terms/">利用規約</a>
-        <a class="nav-link" href="/guidelines/">ガイドライン</a>
-        <a class="nav-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="nav-link" href="/data-ai/">データ・AI</a>
-        <a class="nav-link" href="/commerce/" aria-current="page">特定商取引法に基づく表記</a>
-        <a class="nav-link" href="/support/">問い合わせ</a>
+        <a class="nav-link" href="/" data-i18n="navHome">ホーム</a>
+        <a class="nav-link" href="/?page=adry" data-i18n="navAdry">Adry</a>
+        <a class="nav-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="nav-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="nav-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="nav-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="nav-link" href="/commerce/" aria-current="page" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+        <a class="nav-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <main class="page-main">
     <div class="fade-in">
-      <h1 class="page-title">特定商取引法に基づく表記</h1>
+      <h1 class="page-title" data-i18n="commercePageTitle">特定商取引法に基づく表記</h1>
       <div class="page-underline"></div>
 
       <div class="legal-card">
         <div class="commerce-list">
           <div class="commerce-item">
-            <div class="commerce-term">販売事業者名</div>
-            <div class="commerce-desc">Ａｕｄｒｅｙ合同会社</div>
+            <div class="commerce-term" data-i18n="commerceSellerNameLabel">販売事業者名</div>
+            <div class="commerce-desc" data-i18n="commerceSellerNameValue">Ａｕｄｒｅｙ合同会社</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">代表者名 または 通信販売に関する業務責任者名</div>
-            <div class="commerce-desc">中村研斗</div>
+            <div class="commerce-term" data-i18n="commerceRepLabel">代表者名 または 通信販売に関する業務責任者名</div>
+            <div class="commerce-desc" data-i18n="commerceRepValue">中村研斗</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">所在地</div>
-            <div class="commerce-desc">大阪府吹田市山手町3−9−13-207</div>
+            <div class="commerce-term" data-i18n="commerceAddressLabel">所在地</div>
+            <div class="commerce-desc" data-i18n="commerceAddressValue">大阪府吹田市山手町3−9−13-207</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">電話番号</div>
-            <div class="commerce-desc">請求があった場合、遅滞なく開示します。（アプリ内お問い合わせフォームまたはメールよりご請求ください）</div>
+            <div class="commerce-term" data-i18n="commercePhoneLabel">電話番号</div>
+            <div class="commerce-desc" data-i18n="commercePhoneValue">請求があった場合、遅滞なく開示します。（アプリ内お問い合わせフォームまたはメールよりご請求ください）</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">お問い合わせ先</div>
-            <div class="commerce-desc">お問い合わせフォームまたはメールにてご連絡ください。<br>フォームURL：<a href="https://adry.jp/support/">https://adry.jp/support/</a><br>メール：support@adry.jp</div>
+            <div class="commerce-term" data-i18n="commerceContactLabel">お問い合わせ先</div>
+            <div class="commerce-desc" data-i18n-html="commerceContactValue">お問い合わせフォームまたはメールにてご連絡ください。<br>フォームURL：<a href="/support/">https://adry.jp/support/</a><br>メール：support@adry.jp</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">販売商品・サービス</div>
-            <div class="commerce-desc">Adry内で提供するデジタルサービス「Compass Plus」</div>
+            <div class="commerce-term" data-i18n="commerceProductLabel">販売商品・サービス</div>
+            <div class="commerce-desc" data-i18n="commerceProductValue">Adry内で提供するデジタルサービス「Compass Plus」</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">販売価格</div>
-            <div class="commerce-desc">アプリ内またはApp Storeの購入画面に表示される金額に準じます。</div>
+            <div class="commerce-term" data-i18n="commercePriceLabel">販売価格</div>
+            <div class="commerce-desc" data-i18n="commercePriceValue">アプリ内またはApp Storeの購入画面に表示される金額に準じます。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">商品代金以外の必要料金</div>
-            <div class="commerce-desc">インターネット接続に必要な通信料等は、お客様のご負担となります。</div>
+            <div class="commerce-term" data-i18n="commerceAdditionalFeesLabel">商品代金以外の必要料金</div>
+            <div class="commerce-desc" data-i18n="commerceAdditionalFeesValue">インターネット接続に必要な通信料等は、お客様のご負担となります。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">支払方法</div>
-            <div class="commerce-desc">Apple Inc.（App Store）が提供する決済手段（StoreKit）</div>
+            <div class="commerce-term" data-i18n="commercePaymentMethodLabel">支払方法</div>
+            <div class="commerce-desc" data-i18n="commercePaymentMethodValue">Apple Inc.（App Store）が提供する決済手段（StoreKit）</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">支払時期</div>
-            <div class="commerce-desc">初回は申込時に課金されます。<br>以後は契約開始日を基準として、1か月ごとに自動的に課金されます。<br>実際の引落日は、ご利用の決済手段またはカード会社の定めによります。</div>
+            <div class="commerce-term" data-i18n="commercePaymentTimingLabel">支払時期</div>
+            <div class="commerce-desc" data-i18n-html="commercePaymentTimingValue">初回は申込時に課金されます。<br>以後は契約開始日を基準として、1か月ごとに自動的に課金されます。<br>実際の引落日は、ご利用の決済手段またはカード会社の定めによります。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">サービス利用開始時期</div>
-            <div class="commerce-desc">決済完了後、直ちにご利用いただけます。</div>
+            <div class="commerce-term" data-i18n="commerceServiceStartLabel">サービス利用開始時期</div>
+            <div class="commerce-desc" data-i18n="commerceServiceStartValue">決済完了後、直ちにご利用いただけます。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">返品・キャンセル・解約に関する事項</div>
-            <div class="commerce-desc">デジタルサービスの性質上、当社の責めに帰すべき不具合その他法令上返金が必要となる場合を除き、決済完了後の返品および返金には原則として応じておりません。<br>定期購入の解約は、次回の自動更新が行われる時間の24時間前までに、Apple IDのアカウント設定から自動更新をオフにすることで行ってください。<br>次回更新日前までに解約手続が完了している場合、次回以降の自動課金は行われません。</div>
+            <div class="commerce-term" data-i18n="commerceReturnCancelLabel">返品・キャンセル・解約に関する事項</div>
+            <div class="commerce-desc" data-i18n-html="commerceReturnCancelValue">デジタルサービスの性質上、当社の責めに帰すべき不具合その他法令上返金が必要となる場合を除き、決済完了後の返品および返金には原則として応じておりません。<br>定期購入の解約は、次回の自動更新が行われる時間の24時間前までに、Apple IDのアカウント設定から自動更新をオフにすることで行ってください。<br>次回更新日前までに解約手続が完了している場合、次回以降の自動課金は行われません。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">継続課金について</div>
-            <div class="commerce-desc">Compass Plusは月額770円（税込）の継続課金サービスです。<br>契約は1か月ごとに自動更新され、次回更新日前までに解約しない限り同一条件で更新されます。</div>
+            <div class="commerce-term" data-i18n="commerceRecurringBillingLabel">継続課金について</div>
+            <div class="commerce-desc" data-i18n-html="commerceRecurringBillingValue">Compass Plusは月額770円（税込）の継続課金サービスです。<br>契約は1か月ごとに自動更新され、次回更新日前までに解約しない限り同一条件で更新されます。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">動作環境</div>
-            <div class="commerce-desc">AdryのiOSアプリ上で提供するデジタルサービスとしてご利用いただけます。<br>推奨環境の詳細は、アプリストア表示または当社が別途定める案内をご確認ください。</div>
+            <div class="commerce-term" data-i18n="commerceOperatingEnvLabel">動作環境</div>
+            <div class="commerce-desc" data-i18n-html="commerceOperatingEnvValue">AdryのiOSアプリ上で提供するデジタルサービスとしてご利用いただけます。<br>推奨環境の詳細は、アプリストア表示または当社が別途定める案内をご確認ください。</div>
           </div>
           <div class="commerce-item">
-            <div class="commerce-term">特別な販売条件</div>
-            <div class="commerce-desc">未成年の方は、法定代理人の同意を得たうえでお申し込みください。</div>
+            <div class="commerce-term" data-i18n="commerceSpecialTermsLabel">特別な販売条件</div>
+            <div class="commerce-desc" data-i18n="commerceSpecialTermsValue">未成年の方は、法定代理人の同意を得たうえでお申し込みください。</div>
           </div>
         </div>
       </div>
@@ -111,19 +115,28 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-logo" href="/">
-        <img src="../assets/greenLogo.png" alt="Adryロゴ" style="height:36px;">
-      </a>
-      <div class="footer-links">
-        <a class="footer-link" href="/terms/">利用規約</a>
-        <a class="footer-link" href="/guidelines/">ガイドライン</a>
-        <a class="footer-link" href="/privacy/">プライバシーポリシー</a>
-        <a class="footer-link" href="/data-ai/">データ・AI</a>
-        <a class="footer-link" href="/support/">問い合わせ</a>
-        <a class="footer-link" href="/commerce/">特定商取引法に基づく表記</a>
+      <div class="footer-top">
+        <a class="footer-logo" href="/">
+          <span class="chop-logo" aria-label="Adry"></span>
+        </a>
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn is-active" data-lang-target="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang-target="en">English</button>
+          <button type="button" class="lang-btn" data-lang-target="ko">한국어</button>
+        </div>
       </div>
-      <div class="footer-bottom">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/terms/" data-i18n="navTerms">利用規約</a>
+        <a class="footer-link" href="/guidelines/" data-i18n="navGuidelines">ガイドライン</a>
+        <a class="footer-link" href="/privacy/" data-i18n="navPrivacy">プライバシーポリシー</a>
+        <a class="footer-link" href="/data-ai/" data-i18n="navDataAi">データ・AI</a>
+        <a class="footer-link" href="/support/" data-i18n="navSupport">問い合わせ</a>
+        <a class="footer-link" href="/commerce/" data-i18n="navCommerce">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-bottom" data-i18n="footerCopyright">© 2025 Ａｕｄｒｅｙ合同会社. All rights reserved.</div>
     </div>
   </footer>
+
+  <script src="../assets/js/i18n.js"></script>
 </body>
 </html>
